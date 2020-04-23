@@ -41,7 +41,7 @@ public class Main extends javax.swing.JFrame {
     
     public Main() {
         initComponents();
-         setSize(1050,900);
+        setSize(1500,900);
     }
 
   
@@ -64,68 +64,87 @@ public class Main extends javax.swing.JFrame {
         measureBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1202, 670));
+        setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Code Complexity Measuring Tool");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 34, 446, -1));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Select the Java file for evaluation");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 108, -1, 50));
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Select your source file");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, -1, 50));
 
-        FileBrowseButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        FileBrowseButton.setText("BROWSER");
+        FileBrowseButton.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        FileBrowseButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kishara\\Downloads\\PAF ++++++++\\icons8-upload-24.png")); // NOI18N
+        FileBrowseButton.setText("UPLOAD");
+        FileBrowseButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         FileBrowseButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FileBrowseButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(FileBrowseButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(502, 113, 138, 41));
+        jPanel1.add(FileBrowseButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, 140, 41));
 
-        selectedFilePathField.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        selectedFilePathField.setText("Selected File Path");
-        selectedFilePathField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        selectedFilePathField.setFont(new java.awt.Font("Sitka Subheading", 0, 18)); // NOI18N
+        selectedFilePathField.setForeground(new java.awt.Color(255, 255, 255));
+        selectedFilePathField.setText("                                                  File Path");
+        selectedFilePathField.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(selectedFilePathField, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 219, 570, 40));
 
-        fileNameField.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        fileNameField.setText("File Name");
-        fileNameField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        fileNameField.setFont(new java.awt.Font("Sitka Subheading", 0, 18)); // NOI18N
+        fileNameField.setForeground(new java.awt.Color(255, 255, 255));
+        fileNameField.setText("                                                 File Name");
+        fileNameField.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(fileNameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 315, 570, 41));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel4.setText("Selected File Type : ");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 382, 238, 36));
+        jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Program Language : ");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 382, 190, 36));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(240, 240, 240));
         jLabel6.setText("Number of Lines :");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(397, 386, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 390, -1, -1));
 
         FileTypeLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        FileTypeLabel.setForeground(new java.awt.Color(255, 255, 255));
         FileTypeLabel.setText("--");
-        jPanel1.add(FileTypeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(326, 392, -1, -1));
+        jPanel1.add(FileTypeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 390, -1, -1));
 
         NumOfLines.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        NumOfLines.setForeground(new java.awt.Color(255, 255, 255));
         NumOfLines.setText("--");
-        jPanel1.add(NumOfLines, new org.netbeans.lib.awtextra.AbsoluteConstraints(622, 386, -1, -1));
+        jPanel1.add(NumOfLines, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 390, -1, -1));
 
+        CodeViewer.setEditable(false);
         CodeViewer.setColumns(20);
         CodeViewer.setRows(5);
+        CodeViewer.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        CodeViewer.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jScrollPane1.setViewportView(CodeViewer);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(674, 108, 504, 626));
 
-        measureBtn.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        measureBtn.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        measureBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kishara\\Downloads\\PAF ++++++++\\icons8-laptop-coding-32.png")); // NOI18N
         measureBtn.setText("MEASURE");
+        measureBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        measureBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         measureBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 measureBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(measureBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 564, 128, 45));
+        jPanel1.add(measureBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 570, 128, 45));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

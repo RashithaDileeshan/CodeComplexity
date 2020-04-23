@@ -41,7 +41,7 @@ public class AnalyzerForm extends javax.swing.JFrame {
     
     public AnalyzerForm() {
         initComponents();
-        setSize(1050,900);
+         setSize(1200,700);
     }
 
      public void getDetails(int value)
@@ -410,12 +410,13 @@ public class AnalyzerForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        jTabbedPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTabbedPane1.setPreferredSize(new java.awt.Dimension(377, 400));
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.setBackground(new java.awt.Color(51, 51, 51));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         sizeTextView.setEditable(false);
@@ -425,73 +426,95 @@ public class AnalyzerForm extends javax.swing.JFrame {
 
         jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 14, 470, 413));
 
-        jPanel7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel7.setBackground(new java.awt.Color(51, 51, 51));
         jPanel7.setPreferredSize(new java.awt.Dimension(377, 400));
 
-        jLabel5.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Wkw");
 
-        jLabel6.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Nid");
 
-        jLabel7.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Nkw");
 
-        jLabel8.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Wid");
 
-        jLabel9.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Wop");
 
-        jLabel10.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Nop");
 
-        jLabel11.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Nnv");
 
-        jLabel12.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Wnv");
 
-        jLabel13.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Nsl");
 
-        jLabel14.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Wsl");
 
-        wkw.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        wkw.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        wkw.setForeground(new java.awt.Color(240, 240, 240));
         wkw.setText("--");
 
-        nkw.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nkw.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        nkw.setForeground(new java.awt.Color(240, 240, 240));
         nkw.setText("--");
 
-        nid.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nid.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        nid.setForeground(new java.awt.Color(255, 255, 255));
         nid.setText("--");
 
-        wid.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        wid.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        wid.setForeground(new java.awt.Color(240, 240, 240));
         wid.setText("--");
 
-        wop.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        wop.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        wop.setForeground(new java.awt.Color(240, 240, 240));
         wop.setText("--");
 
-        nop.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nop.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        nop.setForeground(new java.awt.Color(240, 240, 240));
         nop.setText("--");
 
-        wnv.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        wnv.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        wnv.setForeground(new java.awt.Color(240, 240, 240));
         wnv.setText("--");
 
-        nnv.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nnv.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        nnv.setForeground(new java.awt.Color(255, 255, 255));
         nnv.setText("--");
 
-        wsl.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        wsl.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        wsl.setForeground(new java.awt.Color(240, 240, 240));
         wsl.setText("--");
 
-        nsl.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nsl.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        nsl.setForeground(new java.awt.Color(240, 240, 240));
         nsl.setText("--");
 
-        jLabel2.setFont(new java.awt.Font("Bookman Old Style", 1, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("CS");
 
-        cs.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        cs.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        cs.setForeground(new java.awt.Color(255, 255, 255));
         cs.setText("--");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -590,7 +613,7 @@ public class AnalyzerForm extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
                     .addComponent(nsl))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(cs))
@@ -601,7 +624,7 @@ public class AnalyzerForm extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Size", jPanel2);
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel3.setBackground(new java.awt.Color(51, 51, 51));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         variableTextView.setEditable(false);
@@ -611,42 +634,54 @@ public class AnalyzerForm extends javax.swing.JFrame {
 
         jPanel3.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 14, 470, 413));
 
-        jPanel8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel8.setBackground(new java.awt.Color(51, 51, 51));
 
-        jLabel15.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Wvs");
 
-        jLabel16.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel16.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Wcdtv");
 
-        jLabel17.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Wpdtv");
 
-        jLabel18.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel18.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("Npdtv");
 
-        jLabel19.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel19.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Ncdtv");
 
-        wvs.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        wvs.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        wvs.setForeground(java.awt.Color.white);
         wvs.setText("--");
 
-        wpdtv.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        wpdtv.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        wpdtv.setForeground(java.awt.Color.white);
         wpdtv.setText("--");
 
-        wcdtv.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        wcdtv.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        wcdtv.setForeground(new java.awt.Color(255, 255, 255));
         wcdtv.setText("--");
 
-        npdtv.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        npdtv.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        npdtv.setForeground(java.awt.Color.white);
         npdtv.setText("--");
 
-        ncdtv.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        ncdtv.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        ncdtv.setForeground(new java.awt.Color(255, 255, 255));
         ncdtv.setText("--");
 
-        jLabel3.setFont(new java.awt.Font("Bookman Old Style", 1, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("CV");
 
-        cv.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        cv.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        cv.setForeground(new java.awt.Color(240, 240, 240));
         cv.setText("--");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -659,7 +694,7 @@ public class AnalyzerForm extends javax.swing.JFrame {
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(34, 34, 34)
-                        .addComponent(cv, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(cv, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -709,14 +744,14 @@ public class AnalyzerForm extends javax.swing.JFrame {
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(cv))
-                .addContainerGap(165, Short.MAX_VALUE))
+                .addContainerGap(162, Short.MAX_VALUE))
         );
 
         jPanel3.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 299, 400));
 
         jTabbedPane1.addTab("Variable", jPanel3);
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel4.setBackground(new java.awt.Color(51, 51, 51));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         methodTextView.setEditable(false);
@@ -726,42 +761,54 @@ public class AnalyzerForm extends javax.swing.JFrame {
 
         jPanel4.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 14, 470, 413));
 
-        jPanel9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel9.setBackground(new java.awt.Color(51, 51, 51));
 
-        jLabel26.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel26.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(240, 240, 240));
         jLabel26.setText("Wmrt");
 
-        jLabel27.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel27.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(240, 240, 240));
         jLabel27.setText("Wcdtp");
 
-        jLabel28.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel28.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(240, 240, 240));
         jLabel28.setText("Wpdtp");
 
-        jLabel29.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel29.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(240, 240, 240));
         jLabel29.setText("Npdtp");
 
-        wmrt.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        wmrt.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        wmrt.setForeground(new java.awt.Color(240, 240, 240));
         wmrt.setText("--");
 
-        wpdtp.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        wpdtp.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        wpdtp.setForeground(new java.awt.Color(240, 240, 240));
         wpdtp.setText("--");
 
-        wcdtp.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        wcdtp.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        wcdtp.setForeground(new java.awt.Color(240, 240, 240));
         wcdtp.setText("--");
 
-        npdtp.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        npdtp.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        npdtp.setForeground(new java.awt.Color(240, 240, 240));
         npdtp.setText("--");
 
-        jLabel4.setFont(new java.awt.Font("Bookman Old Style", 1, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(240, 240, 240));
         jLabel4.setText("CM");
 
-        cm.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        cm.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        cm.setForeground(new java.awt.Color(240, 240, 240));
         cm.setText("--");
 
-        jLabel30.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel30.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(240, 240, 240));
         jLabel30.setText("Ncdtp");
 
-        ncdtp.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        ncdtp.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        ncdtp.setForeground(new java.awt.Color(240, 240, 240));
         ncdtp.setText("--");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
@@ -821,7 +868,7 @@ public class AnalyzerForm extends javax.swing.JFrame {
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel30)
                     .addComponent(ncdtp))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 188, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 197, Short.MAX_VALUE)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(cm))
@@ -832,7 +879,7 @@ public class AnalyzerForm extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Method", jPanel4);
 
-        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel5.setBackground(new java.awt.Color(51, 51, 51));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         inheritanceTextArea.setEditable(false);
@@ -842,36 +889,46 @@ public class AnalyzerForm extends javax.swing.JFrame {
 
         jPanel5.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 14, 470, 413));
 
-        jPanel10.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel10.setBackground(new java.awt.Color(51, 51, 51));
 
-        jLabel36.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel36.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
         jLabel36.setText("No of direct");
 
-        jLabel39.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel39.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(255, 255, 255));
         jLabel39.setText("No of indirect  ");
 
-        jLabel40.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel40.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(255, 255, 255));
         jLabel40.setText("Total inheritances ");
 
-        directIn.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        directIn.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        directIn.setForeground(new java.awt.Color(255, 255, 255));
         directIn.setText("--");
 
-        indirectIn.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        indirectIn.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        indirectIn.setForeground(new java.awt.Color(255, 255, 255));
         indirectIn.setText("--");
 
-        jLabel46.setFont(new java.awt.Font("Bookman Old Style", 1, 24)); // NOI18N
+        jLabel46.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel46.setForeground(new java.awt.Color(255, 255, 255));
         jLabel46.setText("CI");
 
-        ci.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        ci.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        ci.setForeground(new java.awt.Color(255, 255, 255));
         ci.setText("--");
 
-        jLabel58.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel58.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel58.setForeground(new java.awt.Color(255, 255, 255));
         jLabel58.setText("inheritances");
 
-        jLabel59.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel59.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel59.setForeground(new java.awt.Color(255, 255, 255));
         jLabel59.setText("inheritances");
 
-        totalIn.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        totalIn.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        totalIn.setForeground(new java.awt.Color(255, 255, 255));
         totalIn.setText("--");
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
@@ -918,7 +975,7 @@ public class AnalyzerForm extends javax.swing.JFrame {
                     .addComponent(jLabel39))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel58)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel40)
                     .addComponent(totalIn))
@@ -933,7 +990,9 @@ public class AnalyzerForm extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Inheritance", jPanel5);
 
-        jPanel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel12.setBackground(new java.awt.Color(51, 51, 51));
+
+        jPanel13.setBackground(new java.awt.Color(51, 51, 51));
         jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         couplingtextarea.setEditable(false);
@@ -943,169 +1002,223 @@ public class AnalyzerForm extends javax.swing.JFrame {
 
         jPanel13.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 14, 470, 413));
 
-        jPanel14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel14.setBackground(new java.awt.Color(51, 51, 51));
         jPanel14.setPreferredSize(new java.awt.Dimension(377, 400));
 
-        jLabel21.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel21.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(240, 240, 240));
         jLabel21.setText("Nr");
 
-        jLabel22.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel22.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(240, 240, 240));
         jLabel22.setText("Nmcrms");
 
-        jLabel23.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel23.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(240, 240, 240));
         jLabel23.setText("Nmcms");
 
-        jLabel24.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel24.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(240, 240, 240));
         jLabel24.setText("Nmcmd");
 
-        jLabel25.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel25.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(240, 240, 240));
         jLabel25.setText("Nmcrmd");
 
-        jLabel31.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel31.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(240, 240, 240));
         jLabel31.setText("Nrmcrmd");
 
-        jLabel32.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel32.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(240, 240, 240));
         jLabel32.setText("Nrmcmd");
 
-        jLabel33.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel33.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(240, 240, 240));
         jLabel33.setText("Nrmcms");
 
-        jLabel34.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel34.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(240, 240, 240));
         jLabel34.setText("Nmrgvd");
 
-        jLabel35.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel35.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(240, 240, 240));
         jLabel35.setText("Nmrgvs");
 
-        nr.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nr.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        nr.setForeground(new java.awt.Color(240, 240, 240));
         nr.setText("--");
 
-        nmcms.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nmcms.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        nmcms.setForeground(new java.awt.Color(240, 240, 240));
         nmcms.setText("--");
 
-        nmcrms.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nmcrms.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        nmcrms.setForeground(new java.awt.Color(240, 240, 240));
         nmcrms.setText("--");
 
-        nmcmd.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nmcmd.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        nmcmd.setForeground(new java.awt.Color(240, 240, 240));
         nmcmd.setText("--");
 
-        nmcrmd.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nmcrmd.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        nmcrmd.setForeground(new java.awt.Color(240, 240, 240));
         nmcrmd.setText("--");
 
-        nrmcrmd.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nrmcrmd.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        nrmcrmd.setForeground(new java.awt.Color(240, 240, 240));
         nrmcrmd.setText("--");
 
-        nrmcms.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nrmcms.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        nrmcms.setForeground(new java.awt.Color(240, 240, 240));
         nrmcms.setText("--");
 
-        nrmcmd.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nrmcmd.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        nrmcmd.setForeground(new java.awt.Color(240, 240, 240));
         nrmcmd.setText("--");
 
-        nmrgvs.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nmrgvs.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        nmrgvs.setForeground(new java.awt.Color(240, 240, 240));
         nmrgvs.setText("--");
 
-        nmrgvd.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nmrgvd.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        nmrgvd.setForeground(new java.awt.Color(240, 240, 240));
         nmrgvd.setText("--");
 
-        jLabel37.setFont(new java.awt.Font("Bookman Old Style", 1, 24)); // NOI18N
+        jLabel37.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(240, 240, 240));
         jLabel37.setText("CCP");
 
-        ccp.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        ccp.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        ccp.setForeground(new java.awt.Color(240, 240, 240));
         ccp.setText("--");
 
-        jLabel38.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel38.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(240, 240, 240));
         jLabel38.setText("Nrmcrms");
 
-        nrmcrms.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nrmcrms.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        nrmcrms.setForeground(new java.awt.Color(240, 240, 240));
         nrmcrms.setText("--");
 
-        jLabel41.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel41.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(240, 240, 240));
         jLabel41.setText("Nrmrgvs");
 
-        jLabel42.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel42.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(240, 240, 240));
         jLabel42.setText("Nrmrgvd");
 
-        nrmrgvs.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nrmrgvs.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        nrmrgvs.setForeground(new java.awt.Color(240, 240, 240));
         nrmrgvs.setText("--");
 
-        nrmrgvd.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nrmrgvd.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        nrmrgvd.setForeground(new java.awt.Color(240, 240, 240));
         nrmrgvd.setText("--");
 
-        jLabel43.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel43.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(240, 240, 240));
         jLabel43.setText("Wr");
 
-        jLabel44.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel44.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel44.setForeground(new java.awt.Color(240, 240, 240));
         jLabel44.setText("Wmcms");
 
-        jLabel45.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel45.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(240, 240, 240));
         jLabel45.setText("Wmcmd");
 
-        jLabel48.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel48.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel48.setForeground(new java.awt.Color(240, 240, 240));
         jLabel48.setText("Wmcrms");
 
-        jLabel51.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel51.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel51.setForeground(new java.awt.Color(240, 240, 240));
         jLabel51.setText("Wmcrmd");
 
-        jLabel52.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel52.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel52.setForeground(new java.awt.Color(240, 240, 240));
         jLabel52.setText("Wrmcrms");
 
-        jLabel53.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel53.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel53.setForeground(new java.awt.Color(240, 240, 240));
         jLabel53.setText("Wrmcrmd");
 
-        jLabel54.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel54.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel54.setForeground(new java.awt.Color(240, 240, 240));
         jLabel54.setText("Wrmcms");
 
-        jLabel55.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel55.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel55.setForeground(new java.awt.Color(240, 240, 240));
         jLabel55.setText("Wrmcmd");
 
-        jLabel56.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel56.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel56.setForeground(new java.awt.Color(240, 240, 240));
         jLabel56.setText("Wmrgvs");
 
-        jLabel60.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel60.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel60.setForeground(new java.awt.Color(240, 240, 240));
         jLabel60.setText("Wmrgvd");
 
-        jLabel61.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel61.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel61.setForeground(new java.awt.Color(240, 240, 240));
         jLabel61.setText("Wrmrgvs");
 
-        jLabel62.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel62.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel62.setForeground(new java.awt.Color(240, 240, 240));
         jLabel62.setText("Wrmrgvd");
 
-        wrmrgvd.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        wrmrgvd.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        wrmrgvd.setForeground(new java.awt.Color(240, 240, 240));
         wrmrgvd.setText("--");
 
-        wrmrgvs.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        wrmrgvs.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        wrmrgvs.setForeground(new java.awt.Color(240, 240, 240));
         wrmrgvs.setText("--");
 
-        wmrgvd.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        wmrgvd.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        wmrgvd.setForeground(new java.awt.Color(240, 240, 240));
         wmrgvd.setText("--");
 
-        wmrgvs.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        wmrgvs.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        wmrgvs.setForeground(new java.awt.Color(240, 240, 240));
         wmrgvs.setText("--");
 
-        wrmcmd.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        wrmcmd.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        wrmcmd.setForeground(new java.awt.Color(240, 240, 240));
         wrmcmd.setText("--");
 
-        wrmcms.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        wrmcms.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        wrmcms.setForeground(new java.awt.Color(240, 240, 240));
         wrmcms.setText("--");
 
-        wrmcrmd.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        wrmcrmd.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        wrmcrmd.setForeground(new java.awt.Color(240, 240, 240));
         wrmcrmd.setText("--");
 
-        wrmcrms.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        wrmcrms.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        wrmcrms.setForeground(new java.awt.Color(240, 240, 240));
         wrmcrms.setText("--");
 
-        wmcrmd.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        wmcrmd.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        wmcrmd.setForeground(new java.awt.Color(240, 240, 240));
         wmcrmd.setText("--");
 
-        wmcrms.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        wmcrms.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        wmcrms.setForeground(new java.awt.Color(240, 240, 240));
         wmcrms.setText("--");
 
-        wmcmd.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        wmcmd.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        wmcmd.setForeground(new java.awt.Color(240, 240, 240));
         wmcmd.setText("--");
 
-        wmcms.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        wmcms.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        wmcms.setForeground(new java.awt.Color(240, 240, 240));
         wmcms.setText("--");
 
-        wr.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        wr.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        wr.setForeground(new java.awt.Color(240, 240, 240));
         wr.setText("--");
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
@@ -1205,7 +1318,7 @@ public class AnalyzerForm extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(nmcms, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel14Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                                 .addComponent(jLabel21)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(nr, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1320,7 +1433,7 @@ public class AnalyzerForm extends javax.swing.JFrame {
                         .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel62)
                             .addComponent(wrmrgvd))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel37)
                     .addComponent(ccp))
@@ -1342,7 +1455,7 @@ public class AnalyzerForm extends javax.swing.JFrame {
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 443, Short.MAX_VALUE)
+            .addGap(0, 470, Short.MAX_VALUE)
             .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel12Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -1352,7 +1465,7 @@ public class AnalyzerForm extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Coupling", jPanel12);
 
-        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel6.setBackground(new java.awt.Color(51, 51, 51));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         CcSVariableView.setEditable(false);
@@ -1362,33 +1475,41 @@ public class AnalyzerForm extends javax.swing.JFrame {
 
         jPanel6.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 14, 470, 413));
 
-        jPanel11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel11.setBackground(new java.awt.Color(51, 51, 51));
 
-        jLabel47.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel47.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel47.setForeground(new java.awt.Color(240, 240, 240));
         jLabel47.setText("Wtcs");
 
-        jLabel49.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel49.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel49.setForeground(new java.awt.Color(240, 240, 240));
         jLabel49.setText("Nc");
 
-        jLabel50.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel50.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel50.setForeground(new java.awt.Color(240, 240, 240));
         jLabel50.setText("Ccspps");
 
-        wtcs.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        wtcs.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        wtcs.setForeground(new java.awt.Color(240, 240, 240));
         wtcs.setText("--");
 
-        nc.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nc.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        nc.setForeground(new java.awt.Color(240, 240, 240));
         nc.setText("--");
 
-        ccspps.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        ccspps.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        ccspps.setForeground(new java.awt.Color(240, 240, 240));
         ccspps.setText("--");
 
         nsl4.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
         nsl4.setText("--");
 
-        jLabel57.setFont(new java.awt.Font("Bookman Old Style", 1, 24)); // NOI18N
+        jLabel57.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel57.setForeground(new java.awt.Color(240, 240, 240));
         jLabel57.setText("CCS");
 
-        ccs.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        ccs.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        ccs.setForeground(new java.awt.Color(240, 240, 240));
         ccs.setText("--");
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
@@ -1436,7 +1557,7 @@ public class AnalyzerForm extends javax.swing.JFrame {
                     .addComponent(ccspps))
                 .addGap(171, 171, 171)
                 .addComponent(nsl4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel57)
                     .addComponent(ccs))
@@ -1447,10 +1568,12 @@ public class AnalyzerForm extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Control Structure", jPanel6);
 
-        jLabel1.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
-        jLabel1.setText("TOTAL COMPLEXITY :");
+        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel1.setText("CODE COMPLEXITY :");
 
         TotalComplexityLable.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        TotalComplexityLable.setForeground(new java.awt.Color(240, 240, 240));
         TotalComplexityLable.setText("--");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -1460,17 +1583,17 @@ public class AnalyzerForm extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 836, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TotalComplexityLable)
-                .addGap(46, 46, 46))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 471, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(95, 95, 95)
@@ -1494,7 +1617,7 @@ public class AnalyzerForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(42, 42, 42))
+                .addContainerGap())
         );
 
         pack();
