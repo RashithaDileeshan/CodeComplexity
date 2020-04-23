@@ -6,6 +6,7 @@
 package Interfaces;
 
 import Analytics.ControlStructureMeasure;
+import Analytics.InheritanceMeasure;
 import Analytics.MethodMeasure;
 import Analytics.SizeMeasure;
 import Analytics.VariableMeasure;
@@ -24,17 +25,20 @@ public class AnalyzerForm extends javax.swing.JFrame {
     SizeMeasure scm = new SizeMeasure();
     MethodMeasure mcm = new MethodMeasure();
     VariableMeasure vcm = new VariableMeasure();
+    InheritanceMeasure icm = new InheritanceMeasure();
     ControlStructureMeasure Ccm = new ControlStructureMeasure();
     
     ArrayList<String> SizeMeasureList = new ArrayList<>();
     ArrayList<String> MethodMeasureList = new ArrayList<>();
     ArrayList<String> VariableMeasureList = new ArrayList<>();
+    ArrayList<String> InheritanceMeasureList = new ArrayList<>();
     ArrayList<String> ControlStructureMeasureList = new ArrayList<>();
     
     int Cs,Wkw,Nkw,Wid,Nid,Wop,Nop,Wnv,Nnv,Wsl,Nsl;
     int Cm,Wmrt,Wpdtp,Npdtp,Wcdtp,Ncdtp;
     int Cv,Wvs,Wpdtv,Npdtv,Wcdtv,Ncdtv;
     int Ccs,Wtcs,NC,Ccspps;
+    int Ci;
     
     public AnalyzerForm() {
         initComponents();
@@ -156,6 +160,21 @@ public class AnalyzerForm extends javax.swing.JFrame {
         Ccs = (Wtcs * NC) + Ccspps;
         ccs.setText(Integer.toString(Ccs));
     }
+    
+     public void SetInheritance(int value , String filepath) throws FileNotFoundException, IOException
+   {
+       FileReader read = new FileReader(filepath);
+        BufferedReader br = new BufferedReader(read);
+        inheritanceTextArea.read(br, null);
+        inheritanceTextArea.requestFocus();
+        
+       Ci = value;
+       directIn.setText(Integer.toString(value));
+       indirectIn.setText(Integer.toString(Ci));
+       
+       totalIn.setText((Integer.toString(Ci)));
+       ci.setText(Integer.toString(Ci));
+   }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -229,7 +248,7 @@ public class AnalyzerForm extends javax.swing.JFrame {
         ncdtp = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
-        sizeTextView4 = new javax.swing.JTextArea();
+        inheritanceTextArea = new javax.swing.JTextArea();
         jPanel10 = new javax.swing.JPanel();
         jLabel36 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
@@ -261,7 +280,7 @@ public class AnalyzerForm extends javax.swing.JFrame {
         jLabel20.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
         jLabel20.setText("--");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -688,10 +707,10 @@ public class AnalyzerForm extends javax.swing.JFrame {
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        sizeTextView4.setEditable(false);
-        sizeTextView4.setColumns(20);
-        sizeTextView4.setRows(5);
-        jScrollPane8.setViewportView(sizeTextView4);
+        inheritanceTextArea.setEditable(false);
+        inheritanceTextArea.setColumns(20);
+        inheritanceTextArea.setRows(5);
+        jScrollPane8.setViewportView(inheritanceTextArea);
 
         jPanel5.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 14, 470, 413));
 
@@ -981,6 +1000,7 @@ public class AnalyzerForm extends javax.swing.JFrame {
     private javax.swing.JLabel cv;
     private javax.swing.JLabel directIn;
     private javax.swing.JLabel indirectIn;
+    private javax.swing.JTextArea inheritanceTextArea;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1047,7 +1067,6 @@ public class AnalyzerForm extends javax.swing.JFrame {
     private javax.swing.JLabel nsl;
     private javax.swing.JLabel nsl4;
     private javax.swing.JTextArea sizeTextView;
-    private javax.swing.JTextArea sizeTextView4;
     private javax.swing.JLabel totalIn;
     private javax.swing.JTextArea variableTextView;
     private javax.swing.JLabel wcdtp;

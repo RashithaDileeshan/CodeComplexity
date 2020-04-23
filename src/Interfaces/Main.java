@@ -7,6 +7,7 @@ package Interfaces;
 
 import Analytics.Controller;
 import Analytics.FileAnalyzer;
+import Analytics.InheritanceMeasure;
 import Custom.CustomFile;
 import java.io.BufferedReader;
 import java.io.File;
@@ -28,11 +29,13 @@ public class Main extends javax.swing.JFrame {
     public String fileName;
     public FileAnalyzer fileAnalyzer = new FileAnalyzer();
     AnalyzerForm analyzerForm = new AnalyzerForm();
+    InheritanceMeasure inheritMeasure;
     Controller controller = new Controller();
     FileReader fileReader;
     BufferedReader bufferedReader;
     File file;
     ArrayList <CustomFile> fileList = new ArrayList<>();
+    String [] InheritanceArray;
     //CouplingMain cpMain;
     //Coupling cp;
     
@@ -64,12 +67,15 @@ public class Main extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel5.setText("Code Complexity Measuring Tool");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 34, 446, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Select the Java file for evaluation");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 108, -1, 50));
 
         FileBrowseButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         FileBrowseButton.setText("BROWSER");
@@ -78,30 +84,39 @@ public class Main extends javax.swing.JFrame {
                 FileBrowseButtonActionPerformed(evt);
             }
         });
+        jPanel1.add(FileBrowseButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(502, 113, 138, 41));
 
         selectedFilePathField.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         selectedFilePathField.setText("Selected Fiile Path");
         selectedFilePathField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(selectedFilePathField, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 219, 570, 40));
 
         fileNameField.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         fileNameField.setText("File Name");
         fileNameField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(fileNameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 315, 570, 41));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel4.setText("Selected File Type : ");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 382, 238, 36));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel6.setText("Number of Lines :");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(397, 386, -1, -1));
 
         FileTypeLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         FileTypeLabel.setText("--");
+        jPanel1.add(FileTypeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(326, 392, -1, -1));
 
         NumOfLines.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         NumOfLines.setText("--");
+        jPanel1.add(NumOfLines, new org.netbeans.lib.awtextra.AbsoluteConstraints(622, 386, -1, -1));
 
         CodeViewer.setColumns(20);
         CodeViewer.setRows(5);
         jScrollPane1.setViewportView(CodeViewer);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(674, 108, 504, 626));
 
         measureBtn.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         measureBtn.setText("MEASURE");
@@ -110,70 +125,7 @@ public class Main extends javax.swing.JFrame {
                 measureBtnActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(271, 271, 271)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(469, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(FileBrowseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(selectedFilePathField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(fileNameField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(FileTypeLabel)
-                                .addGap(55, 55, 55)
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(NumOfLines)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(measureBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(262, 262, 262)))
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jLabel5)
-                .addGap(45, 45, 45)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
-                        .addContainerGap())
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(FileBrowseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(61, 61, 61)
-                        .addComponent(selectedFilePathField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(56, 56, 56)
-                        .addComponent(fileNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(NumOfLines)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(FileTypeLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
-                        .addComponent(measureBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(136, 136, 136))))
-        );
+        jPanel1.add(measureBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 564, 128, 45));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -309,6 +261,16 @@ public class Main extends javax.swing.JFrame {
             analyzerForm.getMethodComplexity(filepath);
         } catch (IOException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        InheritanceArray = controller.getStrArr();
+        try
+        {
+            analyzerForm.SetInheritance(controller.InheritanceAnalyzer(InheritanceArray),filepath);
+        }
+        catch(IOException ex)
+        {
+            JOptionPane.showMessageDialog(null, ex);
         }
     }//GEN-LAST:event_measureBtnActionPerformed
 
