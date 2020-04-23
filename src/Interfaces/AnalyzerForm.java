@@ -35,10 +35,13 @@ public class AnalyzerForm extends javax.swing.JFrame {
     int Cm,Wmrt,Wpdtp,Npdtp,Wcdtp,Ncdtp;
     int Cv,Wvs,Wpdtv,Npdtv,Wcdtv,Ncdtv;
     int Ccs,Wtcs,NC,Ccspps;
-    int Ci;
+    int Ci = 0;
     int Ccp,Wr,Nr,Wmcms,Nmcms,Wmcmd,Nmcmd,Wmcrms,Nmcrms,Wmcrmd,Nmcrmd,Wrmcrms,Nrmcrms,Wrmcrmd,Nrmcrmd,Wrmcms,
             Nrmcms,Wrmcmd,Nrmcmd,Wmrgvs,Nmrgvs,Wmrgvd,Nmrgvd,Wrmrgvs,Nrmrgvs,Wrmrgvd,Nrmrgvd;
-    
+    int Cc = 0;
+    int Kwc = 0;
+   
+    int TCps=0;
     public AnalyzerForm() {
         initComponents();
          setSize(1200,700);
@@ -46,6 +49,8 @@ public class AnalyzerForm extends javax.swing.JFrame {
 
      public void getDetails(int value)
     {
+        Cc = value;
+        TCps = TCps + Cc;
         TotalComplexityLable.setText(Integer.toString(value));
     }
     
@@ -87,6 +92,7 @@ public class AnalyzerForm extends javax.swing.JFrame {
         
         Cs=(Wkw*Nkw)+(Wid*Nid)+(Wop*Nop)+(Wnv*Nnv)+(Wsl*Nsl);
         cs.setText(Integer.toString(Cs));
+        TCps = TCps + Cs;
     }
     
    
@@ -114,6 +120,7 @@ public class AnalyzerForm extends javax.swing.JFrame {
         
         Cv = Wvs * ((Wpdtv * Npdtv) + (Wcdtv * Ncdtv));
         cv.setText(Integer.toString(Cv));
+        TCps = TCps + Cv;
     }
   
 //     Send calculated method values to the design
@@ -140,6 +147,8 @@ public class AnalyzerForm extends javax.swing.JFrame {
         
         Cm = Wmrt + (Wpdtp * Npdtp) + (Wcdtp * Ncdtp);
         cm.setText(Integer.toString(Cm));
+        TCps = TCps + Cm;
+
         
     }
     
@@ -163,6 +172,7 @@ public class AnalyzerForm extends javax.swing.JFrame {
         
         Ccs = (Wtcs * NC) + Ccspps;
         ccs.setText(Integer.toString(Ccs));
+        TCps = TCps + Ccs;
     }
     
 //     Send calculated inheritance values to the design
@@ -179,6 +189,7 @@ public class AnalyzerForm extends javax.swing.JFrame {
        
        totalIn.setText((Integer.toString(Ci)));
        ci.setText(Integer.toString(Ci));
+       TCps = TCps + Ci;
    }
      
 //     Send calculated coupling values to the design
@@ -248,8 +259,21 @@ public class AnalyzerForm extends javax.swing.JFrame {
                     (Wmrgvs *Nmrgvs) + (Wmrgvd * Nmrgvd) + (Wrmrgvs * Nrmrgvs) + (Wrmrgvd * Nrmrgvd);
             
             ccp.setText(Integer.toString(Ccp));
-     }
+            TCps = TCps + Ccp;
 
+     }
+    public long getFinalResult()
+    {
+        System.out.println(Cs);
+        System.out.println(Cv);
+        System.out.println(Cm);
+        System.out.println(Ci);
+        System.out.println(Ccp);
+        System.out.println(Ccs);
+        TCps = Cs + Cv + Cm + Ci + Ccp + Ccs;
+        System.out.println(TCps);
+        return TCps;
+    }
    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -404,6 +428,7 @@ public class AnalyzerForm extends javax.swing.JFrame {
         ccs = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         TotalComplexityLable = new javax.swing.JLabel();
+        TCpsmeasure = new javax.swing.JButton();
 
         jLabel20.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
         jLabel20.setText("--");
@@ -1576,6 +1601,15 @@ public class AnalyzerForm extends javax.swing.JFrame {
         TotalComplexityLable.setForeground(new java.awt.Color(240, 240, 240));
         TotalComplexityLable.setText("--");
 
+        TCpsmeasure.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        TCpsmeasure.setText("TCps");
+        TCpsmeasure.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        TCpsmeasure.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TCpsmeasureActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -1584,7 +1618,9 @@ public class AnalyzerForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 836, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TCpsmeasure, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TotalComplexityLable)
                 .addContainerGap(113, Short.MAX_VALUE))
@@ -1596,7 +1632,9 @@ public class AnalyzerForm extends javax.swing.JFrame {
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(95, 95, 95)
+                .addGap(29, 29, 29)
+                .addComponent(TCpsmeasure, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TotalComplexityLable, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
@@ -1623,6 +1661,15 @@ public class AnalyzerForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void TCpsmeasureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TCpsmeasureActionPerformed
+        
+        TotalComplexity ttcmpl = new TotalComplexity();
+        ttcmpl.SetValues(Cc, Wkw, Cs, Cm, Cv, Ci, Ccs, Ccp, TCps);
+        ttcmpl.setLocationRelativeTo(null);
+        ttcmpl.setVisible(true);
+    }//GEN-LAST:event_TCpsmeasureActionPerformed
+
+   
     /**
      * @param args the command line arguments
      */
@@ -1660,6 +1707,7 @@ public class AnalyzerForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea CcSVariableView;
+    private javax.swing.JButton TCpsmeasure;
     private javax.swing.JLabel TotalComplexityLable;
     private javax.swing.JLabel ccp;
     private javax.swing.JLabel ccs;

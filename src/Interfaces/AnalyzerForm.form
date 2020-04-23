@@ -70,7 +70,10 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jTabbedPane1" min="-2" pref="836" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" pref="193" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="jLabel1" min="-2" pref="193" max="-2" attributes="0"/>
+                      <Component id="TCpsmeasure" min="-2" pref="140" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="TotalComplexityLable" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="113" max="32767" attributes="0"/>
@@ -85,7 +88,9 @@
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                  <Component id="TCpsmeasure" min="-2" pref="36" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="TotalComplexityLable" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -2511,6 +2516,22 @@
             </Property>
             <Property name="text" type="java.lang.String" value="--"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="TCpsmeasure">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Century Gothic" size="18" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="TCps"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                <BevelBorder/>
+              </Border>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TCpsmeasureActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
