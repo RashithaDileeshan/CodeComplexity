@@ -87,7 +87,7 @@ public class Main extends javax.swing.JFrame {
         jPanel1.add(FileBrowseButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(502, 113, 138, 41));
 
         selectedFilePathField.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        selectedFilePathField.setText("Selected Fiile Path");
+        selectedFilePathField.setText("Selected File Path");
         selectedFilePathField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(selectedFilePathField, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 219, 570, 40));
 

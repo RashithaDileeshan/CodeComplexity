@@ -260,7 +260,39 @@ public class AnalyzerForm extends javax.swing.JFrame {
         jLabel58 = new javax.swing.JLabel();
         jLabel59 = new javax.swing.JLabel();
         totalIn = new javax.swing.JLabel();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jPanel12 = new javax.swing.JPanel();
+        jPanel13 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        couplingtextarea = new javax.swing.JTextArea();
+        jPanel14 = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        nr = new javax.swing.JLabel();
+        nmcms = new javax.swing.JLabel();
+        nmcrms = new javax.swing.JLabel();
+        nmcmd = new javax.swing.JLabel();
+        nmcrmd = new javax.swing.JLabel();
+        nrmcrmd = new javax.swing.JLabel();
+        nrmcms = new javax.swing.JLabel();
+        nrmcmd = new javax.swing.JLabel();
+        nmrgvs = new javax.swing.JLabel();
+        nmrgvd = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        ccp = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        nrmcrms = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        nrmrgvs = new javax.swing.JLabel();
+        nrmrgvd = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
         CcSVariableView = new javax.swing.JTextArea();
@@ -804,7 +836,257 @@ public class AnalyzerForm extends javax.swing.JFrame {
         jPanel5.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 299, 413));
 
         jTabbedPane1.addTab("Inheritance", jPanel5);
-        jTabbedPane1.addTab("Coupling", jTabbedPane2);
+
+        jPanel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        couplingtextarea.setEditable(false);
+        couplingtextarea.setColumns(20);
+        couplingtextarea.setRows(5);
+        jScrollPane3.setViewportView(couplingtextarea);
+
+        jPanel13.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 14, 470, 413));
+
+        jPanel14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel14.setPreferredSize(new java.awt.Dimension(377, 400));
+
+        jLabel21.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel21.setText("Nr");
+
+        jLabel22.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel22.setText("Nmcrms");
+
+        jLabel23.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel23.setText("Nmcms");
+
+        jLabel24.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel24.setText("Nmcmd");
+
+        jLabel25.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel25.setText("Nmcrmd");
+
+        jLabel31.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel31.setText("Nrmcrmd");
+
+        jLabel32.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel32.setText("Nrmcmd");
+
+        jLabel33.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel33.setText("Nrmcms");
+
+        jLabel34.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel34.setText("Nmrgvd");
+
+        jLabel35.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel35.setText("Nmrgvs");
+
+        nr.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nr.setText("--");
+
+        nmcms.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nmcms.setText("--");
+
+        nmcrms.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nmcrms.setText("--");
+
+        nmcmd.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nmcmd.setText("--");
+
+        nmcrmd.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nmcrmd.setText("--");
+
+        nrmcrmd.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nrmcrmd.setText("--");
+
+        nrmcms.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nrmcms.setText("--");
+
+        nrmcmd.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nrmcmd.setText("--");
+
+        nmrgvs.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nmrgvs.setText("--");
+
+        nmrgvd.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nmrgvd.setText("--");
+
+        jLabel37.setFont(new java.awt.Font("Bookman Old Style", 1, 24)); // NOI18N
+        jLabel37.setText("CCP");
+
+        ccp.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        ccp.setText("--");
+
+        jLabel38.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel38.setText("Nrmcrms");
+
+        nrmcrms.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nrmcrms.setText("--");
+
+        jLabel41.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel41.setText("Nrmrgvs");
+
+        jLabel42.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        jLabel42.setText("Nrmrgvd");
+
+        nrmrgvs.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nrmrgvs.setText("--");
+
+        nrmrgvd.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nrmrgvd.setText("--");
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nrmrgvs, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nrmcrms, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nrmcmd, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nrmcrmd, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nmcmd, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nmcrmd, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nr, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nmcrms, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nrmcms, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nmcms, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nmrgvs, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nmrgvd, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel14Layout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ccp, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nrmrgvd, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(nr))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(nmcms))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24)
+                    .addComponent(nmcmd))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(nmcrms))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25)
+                    .addComponent(nmcrmd))
+                .addGap(8, 8, 8)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel38)
+                    .addComponent(nrmcrms))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel31)
+                    .addComponent(nrmcrmd))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel33)
+                    .addComponent(nrmcms))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel32)
+                    .addComponent(nrmcmd))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel35)
+                    .addComponent(nmrgvs))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel34)
+                    .addComponent(nmrgvd))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel41)
+                    .addComponent(nrmrgvs))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel42)
+                    .addComponent(nrmrgvd))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel37)
+                    .addComponent(ccp))
+                .addContainerGap())
+        );
+
+        jPanel13.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 299, 400));
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 831, Short.MAX_VALUE)
+            .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel12Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, 831, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 443, Short.MAX_VALUE)
+            .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel12Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        jTabbedPane1.addTab("Coupling", jPanel12);
 
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -992,10 +1274,12 @@ public class AnalyzerForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea CcSVariableView;
     private javax.swing.JLabel TotalComplexityLable;
+    private javax.swing.JLabel ccp;
     private javax.swing.JLabel ccs;
     private javax.swing.JLabel ccspps;
     private javax.swing.JLabel ci;
     private javax.swing.JLabel cm;
+    private javax.swing.JTextArea couplingtextarea;
     private javax.swing.JLabel cs;
     private javax.swing.JLabel cv;
     private javax.swing.JLabel directIn;
@@ -1014,16 +1298,30 @@ public class AnalyzerForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel49;
@@ -1039,6 +1337,9 @@ public class AnalyzerForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1048,22 +1349,35 @@ public class AnalyzerForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTextArea methodTextView;
     private javax.swing.JLabel nc;
     private javax.swing.JLabel ncdtp;
     private javax.swing.JLabel ncdtv;
     private javax.swing.JLabel nid;
     private javax.swing.JLabel nkw;
+    private javax.swing.JLabel nmcmd;
+    private javax.swing.JLabel nmcms;
+    private javax.swing.JLabel nmcrmd;
+    private javax.swing.JLabel nmcrms;
+    private javax.swing.JLabel nmrgvd;
+    private javax.swing.JLabel nmrgvs;
     private javax.swing.JLabel nnv;
     private javax.swing.JLabel nop;
     private javax.swing.JLabel npdtp;
     private javax.swing.JLabel npdtv;
+    private javax.swing.JLabel nr;
+    private javax.swing.JLabel nrmcmd;
+    private javax.swing.JLabel nrmcms;
+    private javax.swing.JLabel nrmcrmd;
+    private javax.swing.JLabel nrmcrms;
+    private javax.swing.JLabel nrmrgvd;
+    private javax.swing.JLabel nrmrgvs;
     private javax.swing.JLabel nsl;
     private javax.swing.JLabel nsl4;
     private javax.swing.JTextArea sizeTextView;
