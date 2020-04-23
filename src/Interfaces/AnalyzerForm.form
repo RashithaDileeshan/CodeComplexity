@@ -1306,14 +1306,15 @@
                                   </Group>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="1" attributes="0">
+                                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jLabel41" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel42" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="nrmrgvs" pref="83" max="32767" attributes="0"/>
-                                              <Component id="nrmrgvd" max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="nrmrgvd" min="-2" pref="83" max="-2" attributes="0"/>
+                                              <Component id="nrmrgvs" alignment="0" min="-2" pref="69" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
@@ -1429,10 +1430,7 @@
                                               <Component id="jLabel34" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jLabel41" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="nrmrgvs" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="nrmrgvs" min="-2" pref="18" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
                                               <Component id="jLabel42" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1498,6 +1496,7 @@
                                           <Group type="103" groupAlignment="3" attributes="0">
                                               <Component id="jLabel61" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="wrmrgvs" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel41" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
