@@ -8,7 +8,8 @@ package Interfaces;
 import Analytics.Controller;
 import Analytics.FileAnalyzer;
 import Analytics.InheritanceMeasure;
-import Custom.CustomFile;
+import Coupling.CouplingMain;
+import Coupling.CustomFile;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -34,9 +35,11 @@ public class Main extends javax.swing.JFrame {
     FileReader fileReader;
     BufferedReader bufferedReader;
     File file;
-    ArrayList <CustomFile> fileList = new ArrayList<>();
+    ArrayList<CustomFile> fileList = new ArrayList<>();
     String [] InheritanceArray;
-    //CouplingMain cpMain;
+    CouplingMain couplMain = new CouplingMain();
+    CustomFile csFile1,csFile2;
+    ArrayList<String> resultsCp = new ArrayList<>();
     //Coupling cp;
     
     public Main() {
@@ -217,11 +220,7 @@ public class Main extends javax.swing.JFrame {
         //Adding the code to arraylist
         controller.setStrArr(CodeViewer.getText().split("\\n"));
         
-        String filename = file.getName();
-        CustomFile csFile = new CustomFile(filename);
-        csFile.setFileName(filename);
-        csFile.setFilePath(filepath);
-        fileList.add(csFile);
+        
         
         
         
@@ -267,6 +266,32 @@ public class Main extends javax.swing.JFrame {
         try
         {
             analyzerForm.SetInheritance(controller.InheritanceAnalyzer(InheritanceArray),filepath);
+        }
+        catch(IOException ex)
+        {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+        
+        //Coupling Complaexity
+        String filename = file.getName();
+        System.out.println(filename);
+        csFile1 = new CustomFile(filename);
+        csFile1.setFilePath(filepath);
+        
+        csFile2 = new CustomFile("Coupling.java");
+
+        fileList.add(csFile1);
+        
+        
+        couplMain.setFileList(fileList);
+        couplMain.setFileType("java");
+        couplMain.Start();
+        
+        resultsCp = couplMain.getCouplingResults();
+        
+        try
+        {
+            analyzerForm.setCouplingResult(resultsCp,filepath);
         }
         catch(IOException ex)
         {
