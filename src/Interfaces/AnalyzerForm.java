@@ -29,7 +29,7 @@ public class AnalyzerForm extends javax.swing.JFrame {
     ArrayList<String> SizeMeasureList = new ArrayList<>();
     ArrayList<String> MethodMeasureList = new ArrayList<>();
     ArrayList<String> VariableMeasureList = new ArrayList<>();
-    ArrayList<String> ControlStructureMeasureLst = new ArrayList<>();
+    ArrayList<String> ControlStructureMeasureList = new ArrayList<>();
     
     int Cs,Wkw,Nkw,Wid,Nid,Wop,Nop,Wnv,Nnv,Wsl,Nsl;
     int Cm,Wmrt,Wpdtp,Npdtp,Wcdtp,Ncdtp;
@@ -136,7 +136,26 @@ public class AnalyzerForm extends javax.swing.JFrame {
         
     }
     
-   
+    public void getControlStructureConplexity(String filepath) throws FileNotFoundException, IOException
+    {
+        FileReader read = new FileReader(filepath);
+        BufferedReader br = new BufferedReader(read);
+        CcSVariableView.read(br, null);
+        CcSVariableView.requestFocus();
+        
+        ControlStructureMeasureList = Ccm.ControlComplexityInitializer(filepath);
+        
+        Wtcs = Integer.parseInt(ControlStructureMeasureList.get(0));
+        NC = Integer.parseInt(ControlStructureMeasureList.get(1));
+        Ccspps = Integer.parseInt(ControlStructureMeasureList.get(2));
+        
+        wtcs.setText(Integer.toString(Wtcs));
+        nc.setText(Integer.toString(NC));
+        ccspps.setText(Integer.toString(Ccspps));
+        
+        Ccs = (Wtcs * NC) + Ccspps;
+        ccs.setText(Integer.toString(Ccs));
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -225,17 +244,17 @@ public class AnalyzerForm extends javax.swing.JFrame {
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
-        sizeTextView5 = new javax.swing.JTextArea();
+        CcSVariableView = new javax.swing.JTextArea();
         jPanel11 = new javax.swing.JPanel();
         jLabel47 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
         jLabel50 = new javax.swing.JLabel();
-        wkw4 = new javax.swing.JLabel();
-        nkw4 = new javax.swing.JLabel();
-        wid4 = new javax.swing.JLabel();
+        wtcs = new javax.swing.JLabel();
+        nc = new javax.swing.JLabel();
+        ccspps = new javax.swing.JLabel();
         nsl4 = new javax.swing.JLabel();
         jLabel57 = new javax.swing.JLabel();
-        cs4 = new javax.swing.JLabel();
+        ccs = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         TotalComplexityLable = new javax.swing.JLabel();
 
@@ -771,17 +790,17 @@ public class AnalyzerForm extends javax.swing.JFrame {
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        sizeTextView5.setEditable(false);
-        sizeTextView5.setColumns(20);
-        sizeTextView5.setRows(5);
-        jScrollPane9.setViewportView(sizeTextView5);
+        CcSVariableView.setEditable(false);
+        CcSVariableView.setColumns(20);
+        CcSVariableView.setRows(5);
+        jScrollPane9.setViewportView(CcSVariableView);
 
         jPanel6.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 14, 470, 413));
 
         jPanel11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel47.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
-        jLabel47.setText("Wtcp");
+        jLabel47.setText("Wtcs");
 
         jLabel49.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
         jLabel49.setText("Nc");
@@ -789,14 +808,14 @@ public class AnalyzerForm extends javax.swing.JFrame {
         jLabel50.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
         jLabel50.setText("Ccspps");
 
-        wkw4.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
-        wkw4.setText("--");
+        wtcs.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        wtcs.setText("--");
 
-        nkw4.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
-        nkw4.setText("--");
+        nc.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        nc.setText("--");
 
-        wid4.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
-        wid4.setText("--");
+        ccspps.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        ccspps.setText("--");
 
         nsl4.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
         nsl4.setText("--");
@@ -804,8 +823,8 @@ public class AnalyzerForm extends javax.swing.JFrame {
         jLabel57.setFont(new java.awt.Font("Bookman Old Style", 1, 24)); // NOI18N
         jLabel57.setText("CCS");
 
-        cs4.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
-        cs4.setText("--");
+        ccs.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
+        ccs.setText("--");
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -817,20 +836,20 @@ public class AnalyzerForm extends javax.swing.JFrame {
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(wid4, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(ccspps, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(wkw4, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(wtcs, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nkw4, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(nc, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGap(53, 53, 53)
                         .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(39, 39, 39)
-                        .addComponent(cs4, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ccs, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(50, 50, 50)
                         .addComponent(nsl4, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -841,21 +860,21 @@ public class AnalyzerForm extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel47)
-                    .addComponent(wkw4))
+                    .addComponent(wtcs))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel49)
-                    .addComponent(nkw4))
+                    .addComponent(nc))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel50)
-                    .addComponent(wid4))
+                    .addComponent(ccspps))
                 .addGap(171, 171, 171)
                 .addComponent(nsl4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel57)
-                    .addComponent(cs4))
+                    .addComponent(ccs))
                 .addGap(39, 39, 39))
         );
 
@@ -952,11 +971,13 @@ public class AnalyzerForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea CcSVariableView;
     private javax.swing.JLabel TotalComplexityLable;
+    private javax.swing.JLabel ccs;
+    private javax.swing.JLabel ccspps;
     private javax.swing.JLabel ci;
     private javax.swing.JLabel cm;
     private javax.swing.JLabel cs;
-    private javax.swing.JLabel cs4;
     private javax.swing.JLabel cv;
     private javax.swing.JLabel directIn;
     private javax.swing.JLabel indirectIn;
@@ -1014,11 +1035,11 @@ public class AnalyzerForm extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTextArea methodTextView;
+    private javax.swing.JLabel nc;
     private javax.swing.JLabel ncdtp;
     private javax.swing.JLabel ncdtv;
     private javax.swing.JLabel nid;
     private javax.swing.JLabel nkw;
-    private javax.swing.JLabel nkw4;
     private javax.swing.JLabel nnv;
     private javax.swing.JLabel nop;
     private javax.swing.JLabel npdtp;
@@ -1027,21 +1048,19 @@ public class AnalyzerForm extends javax.swing.JFrame {
     private javax.swing.JLabel nsl4;
     private javax.swing.JTextArea sizeTextView;
     private javax.swing.JTextArea sizeTextView4;
-    private javax.swing.JTextArea sizeTextView5;
     private javax.swing.JLabel totalIn;
     private javax.swing.JTextArea variableTextView;
     private javax.swing.JLabel wcdtp;
     private javax.swing.JLabel wcdtv;
     private javax.swing.JLabel wid;
-    private javax.swing.JLabel wid4;
     private javax.swing.JLabel wkw;
-    private javax.swing.JLabel wkw4;
     private javax.swing.JLabel wmrt;
     private javax.swing.JLabel wnv;
     private javax.swing.JLabel wop;
     private javax.swing.JLabel wpdtp;
     private javax.swing.JLabel wpdtv;
     private javax.swing.JLabel wsl;
+    private javax.swing.JLabel wtcs;
     private javax.swing.JLabel wvs;
     // End of variables declaration//GEN-END:variables
 }

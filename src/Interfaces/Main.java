@@ -247,6 +247,16 @@ public class Main extends javax.swing.JFrame {
         }
         
        
+         //Control Structure Complexity
+        try
+        {
+            analyzerForm.getControlStructureConplexity(filepath);
+        }
+        catch(IOException ex)
+        {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+        
     }//GEN-LAST:event_FileBrowseButtonActionPerformed
 
     private void measureBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_measureBtnActionPerformed
