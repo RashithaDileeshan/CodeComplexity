@@ -5,12 +5,16 @@
  */
 package Interfaces;
 
+import Analytics.Controller;
 import Analytics.FileAnalyzer;
+import Custom.CustomFile;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
@@ -22,13 +26,15 @@ public class Main extends javax.swing.JFrame {
 
     public static String filepath;
     public String fileName;
-    public FileAnalyzer analit = new FileAnalyzer();
-    AnalyzerForm anzf = new AnalyzerForm();
-    FileReader read;
-    BufferedReader br;
-    File fl;
-   
-    
+    public FileAnalyzer fileAnalyzer = new FileAnalyzer();
+    AnalyzerForm analyzerForm = new AnalyzerForm();
+    Controller controller = new Controller();
+    FileReader fileReader;
+    BufferedReader bufferedReader;
+    File file;
+    ArrayList <CustomFile> fileList = new ArrayList<>();
+    //CouplingMain cpMain;
+    //Coupling cp;
     
     public Main() {
         initComponents();
@@ -52,7 +58,7 @@ public class Main extends javax.swing.JFrame {
         NumOfLines = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         CodeViewer = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
+        measureBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,11 +103,11 @@ public class Main extends javax.swing.JFrame {
         CodeViewer.setRows(5);
         jScrollPane1.setViewportView(CodeViewer);
 
-        jButton1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jButton1.setText("MEASURE");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        measureBtn.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        measureBtn.setText("MEASURE");
+        measureBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                measureBtnActionPerformed(evt);
             }
         });
 
@@ -135,7 +141,7 @@ public class Main extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(measureBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(262, 262, 262)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -165,7 +171,7 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(FileTypeLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(measureBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(136, 136, 136))))
         );
 
@@ -198,9 +204,9 @@ public class Main extends javax.swing.JFrame {
         choose.showOpenDialog(null);
 
         //Getting the absolute file path and file name to display
-        fl = choose.getSelectedFile();
-        filepath = fl.getAbsolutePath();
-        String flname = fl.getName();
+        file = choose.getSelectedFile();
+        filepath = file.getAbsolutePath();
+        String flname = file.getName();
         selectedFilePathField.setText((filepath));
         fileNameField.setText(flname);
         
@@ -217,9 +223,9 @@ public class Main extends javax.swing.JFrame {
         //Viewing the code in the text area
         try
         {
-            read = new FileReader(filepath);
-            br = new BufferedReader(read);
-            CodeViewer.read(br, null);
+            fileReader = new FileReader(filepath);
+            bufferedReader = new BufferedReader(fileReader);
+            CodeViewer.read(bufferedReader, null);
             //br.close();
             CodeViewer.requestFocus();
         }
@@ -231,7 +237,7 @@ public class Main extends javax.swing.JFrame {
         try
         {
             int lineCount;
-            lineCount = analit.LineCounter(filepath);
+            lineCount = fileAnalyzer.LineCounter(filepath);
             NumOfLines.setText(Integer.toString(lineCount));
             
         }
@@ -243,11 +249,58 @@ public class Main extends javax.swing.JFrame {
        
     }//GEN-LAST:event_FileBrowseButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+    private void measureBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_measureBtnActionPerformed
+                  
+        
+        //Adding the code to arraylist
+        controller.setStrArr(CodeViewer.getText().split("\\n"));
+        
+        String filename = file.getName();
+        CustomFile csFile = new CustomFile(filename);
+        csFile.setFileName(filename);
+        csFile.setFilePath(filepath);
+        fileList.add(csFile);
         
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+        
+        try {
+            //Passing the code to Analyzeform Text Area
+            analyzerForm.getCodeText(filepath);
+        } catch (IOException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        //Calculating the complexity
+        analyzerForm.setVisible(true);
+        
+        //Calculating Code Complexity
+        analyzerForm.getDetails(controller.CodeAnalyzer(controller.getStrArr()));
+        
+        //Calculating Size Complexity
+        try
+        {
+            analyzerForm.getSizeComplexity(filepath);
+        }
+        catch (Exception ex)
+        {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+        
+      
+       
+        try {
+            analyzerForm.getVariableComplexity(controller.getStrArr(),filepath);
+        } catch (IOException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        try {
+            //Calculating Method Complexity
+            analyzerForm.getMethodComplexity(filepath);
+        } catch (IOException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_measureBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -290,13 +343,13 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel FileTypeLabel;
     private javax.swing.JLabel NumOfLines;
     private javax.swing.JLabel fileNameField;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton measureBtn;
     private javax.swing.JLabel selectedFilePathField;
     // End of variables declaration//GEN-END:variables
 }
