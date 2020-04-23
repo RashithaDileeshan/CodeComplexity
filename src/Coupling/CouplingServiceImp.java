@@ -7,9 +7,6 @@ import java.util.ArrayList;
 
 public class CouplingServiceImp implements CouplingService {
 
-	
-
-	
 
 	@Override
 	public String getMethodName(String line) {

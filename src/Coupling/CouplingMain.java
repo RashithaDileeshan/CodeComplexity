@@ -2,10 +2,10 @@ package Coupling;
 
 import Coupling.CouplingService;
 import Coupling.CouplingServiceImp;
-import Coupling.FileReadService;
-import Coupling.FileReadServiceImp;
+import Reading.FileReadService;
+import Reading.FileReadServiceImpl;
+import Reading.FileRead;
 import Coupling.CustomFile;
-import Coupling.FileRead;
 import java.util.ArrayList;
 
 
@@ -53,7 +53,7 @@ try {
 					}
 					file.setFileType(fileType);
 					FileRead fileRead = new FileRead(file.getFileName());
-					FileReadService fileReadService = new FileReadServiceImp();
+					FileReadService fileReadService = new FileReadServiceImpl();
 
 					fileReadService.openFile(fileRead, file);
 					fileReadService.readFile(fileRead, file);
