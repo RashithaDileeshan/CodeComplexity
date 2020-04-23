@@ -2,6 +2,7 @@ package Coupling;
 
 import Coupling.CustomFile;
 
+
 public class Line {
 	
 	private CustomFile file;

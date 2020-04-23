@@ -1,7 +1,7 @@
 package Coupling;
 
 import java.util.ArrayList;
-
+ 
 public class Coupling {
 	
 	private String fileName;
