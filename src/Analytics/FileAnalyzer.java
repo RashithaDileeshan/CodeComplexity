@@ -11,10 +11,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Rashitha
- */
+
 public class FileAnalyzer {
     
     public int NumberOfLines;

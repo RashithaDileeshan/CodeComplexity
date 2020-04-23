@@ -12,10 +12,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
-/**
- *
- * @author Kishara
- */
+
 public class ControlStructureMeasure {
     
     ArrayList<String> returnValues = new ArrayList<>();

@@ -8,10 +8,7 @@ package Analytics;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
-/**
- *
- * @author Rashitha
- */
+
 public class InheritanceMeasure {
     
      String [] words;

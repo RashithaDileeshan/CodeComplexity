@@ -11,15 +11,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
-/**
- *
- * @author Kishara
- */
+
 public class SizeMeasure {
     
     Controller controller = new Controller();
    
-    
     int Cs,Wkw,Nkw,Wid,Nid,Wop,Nop,Wnv,Nnv,Wsl,Nsl;
     boolean flag = false;
     ArrayList<String> var = new ArrayList<>();
@@ -35,12 +31,9 @@ public class SizeMeasure {
         
         String CurrentLine,line;
 		while((line = br.readLine())!= null)
-                {
-                    
-                    CurrentLine=line;
-//                    
-                    findToken(CurrentLine,1);
-//                    
+                { 
+                    CurrentLine=line; 
+                    findToken(CurrentLine,1); 
                 }
                 
                 returnValues.add(Integer.toString(Wkw));

@@ -11,10 +11,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
-/**
- *
- * @author Kishara
- */
+
 public class VariableMeasure {
     
     ArrayList<String> returnValues = new ArrayList<>();
@@ -44,12 +41,9 @@ public class VariableMeasure {
                 {
                     if(words[j].equals(primitiveDataTypes[k]))
                     {
-                        //if((words[j+2].equals(regex)))
-                        //{
                             Wvs++;
                             Wpdtv++;
                             Npdtv++;
-                        //}
                     }
                     else if((words[j] == null ? primitiveDataTypes[k] != null : !words[j].equals(primitiveDataTypes[k]))&&(!regex.equals(words[j])))
                     {

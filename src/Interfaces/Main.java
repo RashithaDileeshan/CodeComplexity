@@ -20,10 +20,7 @@ import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Rashitha
- */
+
 public class Main extends javax.swing.JFrame {
 
     public static String filepath;
@@ -40,7 +37,7 @@ public class Main extends javax.swing.JFrame {
     CouplingMain couplMain = new CouplingMain();
     CustomFile csFile1,csFile2;
     ArrayList<String> resultsCp = new ArrayList<>();
-    //Coupling cp;
+
     
     public Main() {
         initComponents();
@@ -214,14 +211,12 @@ public class Main extends javax.swing.JFrame {
         
     }//GEN-LAST:event_FileBrowseButtonActionPerformed
 
+    //implement the measuring button
     private void measureBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_measureBtnActionPerformed
                   
         
         //Adding the code to arraylist
         controller.setStrArr(CodeViewer.getText().split("\\n"));
-        
-        
-        
         
         
         try {
@@ -248,7 +243,7 @@ public class Main extends javax.swing.JFrame {
         }
         
       
-       
+       //Calculating Variable Complexity
         try {
             analyzerForm.getVariableComplexity(controller.getStrArr(),filepath);
         } catch (IOException ex) {
@@ -262,6 +257,8 @@ public class Main extends javax.swing.JFrame {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+        
+        //Calculating Inheritance Complexity
         InheritanceArray = controller.getStrArr();
         try
         {
@@ -272,7 +269,7 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, ex);
         }
         
-        //Coupling Complaexity
+        //Coupling complexity
         String filename = file.getName();
         System.out.println(filename);
         csFile1 = new CustomFile(filename);

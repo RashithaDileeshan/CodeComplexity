@@ -12,10 +12,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
-/**
- *
- * @author Kishara
- */
+
 public class MethodMeasure {
     
     
@@ -23,8 +20,7 @@ public class MethodMeasure {
     Controller controller = new Controller();
     String[] AccessLvels = controller.getAccessLevels();
     String[] PrimitiveTypes = controller.getPrimitiveDataTypes();
-    
-    
+   
     int Cm,Wmrt,Wpdtp,Npdtp,Wcdtp,Ncdtp;
     
     public ArrayList<String> MethodComplexityInitializer(String filepath) throws FileNotFoundException, IOException
@@ -35,11 +31,8 @@ public class MethodMeasure {
         
         while((line = br.readLine())!= null)
                 {
-                    
                     CurrentLine=line;
-//                    
-                    findToken(CurrentLine,1);
-//                    
+                    findToken(CurrentLine,1); 
                 }
         returnValues.add(Integer.toString(Wmrt));
         returnValues.add(Integer.toString(Wpdtp));

@@ -8,10 +8,7 @@ package Analytics;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
-/**
- *
- * @author Kishara
- */
+
 public class Controller {
     
     String[] strArr;
