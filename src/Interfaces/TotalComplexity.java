@@ -106,12 +106,12 @@ public class TotalComplexity extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Veriable Complexity :");
+        jLabel9.setText("Variable Complexity :");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 430, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Control Stracture Complexity :");
+        jLabel10.setText("Control Structure Complexity :");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 300, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
@@ -127,7 +127,7 @@ public class TotalComplexity extends javax.swing.JFrame {
         jLabel68.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         jLabel68.setForeground(new java.awt.Color(255, 255, 255));
         jLabel68.setText("Total complexity of a program statement");
-        jPanel1.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 520, 630, -1));
+        jPanel1.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 520, 630, -1));
 
         totalTCps.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         totalTCps.setForeground(new java.awt.Color(255, 0, 0));
