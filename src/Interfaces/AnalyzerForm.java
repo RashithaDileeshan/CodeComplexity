@@ -157,10 +157,6 @@ public class AnalyzerForm extends javax.swing.JFrame {
 //     Send calculated control structure values to the design
     public void getControlStructureConplexity(String filepath) throws FileNotFoundException, IOException
     {
-//        FileReader read = new FileReader(filepath);
-//        BufferedReader br = new BufferedReader(read);
-//        CcSVariableView.read(br, null);
-//        CcSVariableView.requestFocus();
         
         ControlStructureMeasureList = Ccm.ControlComplexityInitializer(filepath);
         
@@ -169,28 +165,28 @@ public class AnalyzerForm extends javax.swing.JFrame {
             csm11 = ControlStructureMeasureList.get(i);
 
             System.out.println(" ============= ================   ====================== =============");
-            System.out.println("RRRRRRRrAnswer:-- " + csm11.getLine());
-            System.out.println("RRRRRRRrAnswer:-- " + csm11.getWtcs());
-            System.out.println("RRRRRRRrAnswer:-- " + csm11.getNC());
-            System.out.println("RRRRRRRrAnswer:-- " + csm11.getCcspps());
+            System.out.println("getLineAnswer:-- " + csm11.getLine());
+            System.out.println("getWtcsAnswer:-- " + csm11.getWtcs());
+            System.out.println("getNCAnswer:-- " + csm11.getNC());
+            System.out.println("getCcsppsAnswer:-- " + csm11.getCcspps());
+            
+            this.Wtcs = this.Wtcs + Integer.parseInt(csm11.getWtcs());
+            this.NC = this.NC +  Integer.parseInt(csm11.getNC());
+            this.Ccspps = this.Ccspps + Integer.parseInt(csm11.getCcspps());
             
             addControlStable(csm11.getLine(), csm11.getWtcs(), csm11.getNC(), csm11.getCcspps(), csm11.getCcs());
         }
-           
         
-//        Wtcs = Integer.parseInt(ControlStructureMeasureList.get(0));
-//        NC = Integer.parseInt(ControlStructureMeasureList.get(1));
-//        Ccspps = Integer.parseInt(ControlStructureMeasureList.get(2));
-//        
-//        wtcs.setText(Integer.toString(Wtcs));
-//        nc.setText(Integer.toString(NC));
-//        ccspps.setText(Integer.toString(Ccspps));
-//        
-//        Ccs = (Wtcs * NC) + Ccspps;
-//        ccs.setText(Integer.toString(Ccs));
-//        TCps = TCps + Ccs;
+        wtcs.setText(Integer.toString(Wtcs));
+        nc.setText(Integer.toString(NC));
+        ccspps.setText(Integer.toString(Ccspps));
+        
+        Ccs = (Wtcs * NC) + Ccspps;
+        ccs.setText(Integer.toString(Ccs));
+        TCps = TCps + Ccs;
     }
     
+//    Control Structure Table
         public void addControlStable(String data1, String data2, String data3, String data4, String data5) {
         DefaultTableModel model = (DefaultTableModel) ControlSTable.getModel();
 
