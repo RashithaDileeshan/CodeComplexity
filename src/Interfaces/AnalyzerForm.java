@@ -10,11 +10,13 @@ import Analytics.InheritanceMeasure;
 import Analytics.MethodMeasure;
 import Analytics.SizeMeasure;
 import Analytics.VariableMeasure;
+import Model.ControlStructureModel;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 
 public class AnalyzerForm extends javax.swing.JFrame {
@@ -29,7 +31,7 @@ public class AnalyzerForm extends javax.swing.JFrame {
     ArrayList<String> MethodMeasureList = new ArrayList<>();
     ArrayList<String> VariableMeasureList = new ArrayList<>();
     ArrayList<String> InheritanceMeasureList = new ArrayList<>();
-    ArrayList<String> ControlStructureMeasureList = new ArrayList<>();
+    ArrayList<ControlStructureModel> ControlStructureMeasureList = new ArrayList<>();
     
     int Cs,Wkw,Nkw,Wid,Nid,Wop,Nop,Wnv,Nnv,Wsl,Nsl;
     int Cm,Wmrt,Wpdtp,Npdtp,Wcdtp,Ncdtp;
@@ -155,24 +157,45 @@ public class AnalyzerForm extends javax.swing.JFrame {
 //     Send calculated control structure values to the design
     public void getControlStructureConplexity(String filepath) throws FileNotFoundException, IOException
     {
-        FileReader read = new FileReader(filepath);
-        BufferedReader br = new BufferedReader(read);
-        CcSVariableView.read(br, null);
-        CcSVariableView.requestFocus();
+//        FileReader read = new FileReader(filepath);
+//        BufferedReader br = new BufferedReader(read);
+//        CcSVariableView.read(br, null);
+//        CcSVariableView.requestFocus();
         
         ControlStructureMeasureList = Ccm.ControlComplexityInitializer(filepath);
         
-        Wtcs = Integer.parseInt(ControlStructureMeasureList.get(0));
-        NC = Integer.parseInt(ControlStructureMeasureList.get(1));
-        Ccspps = Integer.parseInt(ControlStructureMeasureList.get(2));
+        for (int i = 0; i < ControlStructureMeasureList.size(); i++) {
+            ControlStructureModel csm11 = new ControlStructureModel();
+            csm11 = ControlStructureMeasureList.get(i);
+
+            System.out.println(" ============= ================   ====================== =============");
+            System.out.println("RRRRRRRrAnswer:-- " + csm11.getLine());
+            System.out.println("RRRRRRRrAnswer:-- " + csm11.getWtcs());
+            System.out.println("RRRRRRRrAnswer:-- " + csm11.getNC());
+            System.out.println("RRRRRRRrAnswer:-- " + csm11.getCcspps());
+            
+            addControlStable(csm11.getLine(), csm11.getWtcs(), csm11.getNC(), csm11.getCcspps(), csm11.getCcs());
+        }
+           
         
-        wtcs.setText(Integer.toString(Wtcs));
-        nc.setText(Integer.toString(NC));
-        ccspps.setText(Integer.toString(Ccspps));
-        
-        Ccs = (Wtcs * NC) + Ccspps;
-        ccs.setText(Integer.toString(Ccs));
-        TCps = TCps + Ccs;
+//        Wtcs = Integer.parseInt(ControlStructureMeasureList.get(0));
+//        NC = Integer.parseInt(ControlStructureMeasureList.get(1));
+//        Ccspps = Integer.parseInt(ControlStructureMeasureList.get(2));
+//        
+//        wtcs.setText(Integer.toString(Wtcs));
+//        nc.setText(Integer.toString(NC));
+//        ccspps.setText(Integer.toString(Ccspps));
+//        
+//        Ccs = (Wtcs * NC) + Ccspps;
+//        ccs.setText(Integer.toString(Ccs));
+//        TCps = TCps + Ccs;
+    }
+    
+        public void addControlStable(String data1, String data2, String data3, String data4, String data5) {
+        DefaultTableModel model = (DefaultTableModel) ControlSTable.getModel();
+
+        model.addRow(new Object[]{data1, data2, data3, data4, data5});
+        ControlSTable.setModel(model);
     }
     
 //     Send calculated inheritance values to the design
@@ -414,8 +437,6 @@ public class AnalyzerForm extends javax.swing.JFrame {
         wmcms = new javax.swing.JLabel();
         wr = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
-        jScrollPane9 = new javax.swing.JScrollPane();
-        CcSVariableView = new javax.swing.JTextArea();
         jPanel11 = new javax.swing.JPanel();
         jLabel47 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
@@ -426,6 +447,8 @@ public class AnalyzerForm extends javax.swing.JFrame {
         nsl4 = new javax.swing.JLabel();
         jLabel57 = new javax.swing.JLabel();
         ccs = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        ControlSTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         TotalComplexityLable = new javax.swing.JLabel();
         TCpsmeasure = new javax.swing.JButton();
@@ -1493,13 +1516,6 @@ public class AnalyzerForm extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(51, 51, 51));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        CcSVariableView.setEditable(false);
-        CcSVariableView.setColumns(20);
-        CcSVariableView.setRows(5);
-        jScrollPane9.setViewportView(CcSVariableView);
-
-        jPanel6.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 14, 470, 413));
-
         jPanel11.setBackground(new java.awt.Color(51, 51, 51));
 
         jLabel47.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -1590,6 +1606,18 @@ public class AnalyzerForm extends javax.swing.JFrame {
         );
 
         jPanel6.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 299, 413));
+
+        ControlSTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Code Line", "Wtcs", "Nc", "Ccpps", "Ccs"
+            }
+        ));
+        jScrollPane1.setViewportView(ControlSTable);
+
+        jPanel6.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 430, 410));
 
         jTabbedPane1.addTab("Control Structure", jPanel6);
 
@@ -1706,7 +1734,7 @@ public class AnalyzerForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea CcSVariableView;
+    private javax.swing.JTable ControlSTable;
     private javax.swing.JButton TCpsmeasure;
     private javax.swing.JLabel TotalComplexityLable;
     private javax.swing.JLabel ccp;
@@ -1796,12 +1824,12 @@ public class AnalyzerForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
-    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea methodTextView;
     private javax.swing.JLabel nc;
