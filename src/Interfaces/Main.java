@@ -20,7 +20,6 @@ import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
-
 public class Main extends javax.swing.JFrame {
 
     public static String filepath;
@@ -33,18 +32,16 @@ public class Main extends javax.swing.JFrame {
     BufferedReader bufferedReader;
     File file;
     ArrayList<CustomFile> fileList = new ArrayList<>();
-    String [] InheritanceArray;
+    String[] InheritanceArray;
     CouplingMain couplMain = new CouplingMain();
-    CustomFile csFile1,csFile2;
+    CustomFile csFile1, csFile2;
     ArrayList<String> resultsCp = new ArrayList<>();
 
-    
     public Main() {
         initComponents();
-        setSize(1500,900);
+        setSize(1500, 900);
     }
 
-  
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -83,7 +80,6 @@ public class Main extends javax.swing.JFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, -1, 50));
 
         FileBrowseButton.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        FileBrowseButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kishara\\Downloads\\PAF ++++++++\\icons8-upload-24.png")); // NOI18N
         FileBrowseButton.setText("UPLOAD");
         FileBrowseButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         FileBrowseButton.addActionListener(new java.awt.event.ActionListener() {
@@ -135,7 +131,6 @@ public class Main extends javax.swing.JFrame {
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(674, 108, 504, 626));
 
         measureBtn.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        measureBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kishara\\Downloads\\PAF ++++++++\\icons8-laptop-coding-32.png")); // NOI18N
         measureBtn.setText("MEASURE");
         measureBtn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         measureBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -167,8 +162,8 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void FileBrowseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FileBrowseButtonActionPerformed
-        
-         //Selecting the file from file explorer
+
+        //Selecting the file from file explorer
         JFileChooser choose = new JFileChooser();
         File workingDir = new File(System.getProperty("user.dir"));
         choose.setCurrentDirectory((workingDir));
@@ -180,137 +175,110 @@ public class Main extends javax.swing.JFrame {
         String flname = file.getName();
         selectedFilePathField.setText((filepath));
         fileNameField.setText(flname);
-        
-       if(filepath.toLowerCase().endsWith(".java"))
-        {
+
+        if (filepath.toLowerCase().endsWith(".java")) {
             FileTypeLabel.setText("Java");
-        }
-        else if(filepath.toLowerCase().endsWith(".cpp"))
-        {
+        } else if (filepath.toLowerCase().endsWith(".cpp")) {
             FileTypeLabel.setText("C++");
         }
-        
-        
+
         //Viewing the code in the text area
-        try
-        {
+        try {
             fileReader = new FileReader(filepath);
             bufferedReader = new BufferedReader(fileReader);
             CodeViewer.read(bufferedReader, null);
             //br.close();
             CodeViewer.requestFocus();
-        }
-        catch(Exception ex)
-        {
+        } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex);
         }
-        
-        try
-        {
+
+        try {
             int lineCount;
             lineCount = fileAnalyzer.LineCounter(filepath);
             NumOfLines.setText(Integer.toString(lineCount));
-            
-        }
-        catch(Exception ex)
-        {
+
+        } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex);
         }
-        
-       
-         //Control Structure Complexity
-        try
-        {
+
+        //Control Structure Complexity
+        try {
             analyzerForm.getControlStructureConplexity(filepath);
-        }
-        catch(IOException ex)
-        {
+        } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, ex);
         }
-        
+
     }//GEN-LAST:event_FileBrowseButtonActionPerformed
 
     //implement the measuring button
     private void measureBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_measureBtnActionPerformed
-                  
-        
+
         //Adding the code to arraylist
         controller.setStrArr(CodeViewer.getText().split("\\n"));
-        
-        
+
         try {
             //Passing the code to Analyzeform Text Area
             analyzerForm.getCodeText(filepath);
         } catch (IOException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         //Calculating the complexity
         analyzerForm.setVisible(true);
-        
+
         //Calculating Code Complexity
         analyzerForm.getDetails(controller.CodeAnalyzer(controller.getStrArr()));
-        
+
         //Calculating Size Complexity
-        try
-        {
+        try {
             analyzerForm.getSizeComplexity(filepath);
-        }
-        catch (Exception ex)
-        {
+        } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex);
         }
-        
-      
-       //Calculating Variable Complexity
+
+        //Calculating Variable Complexity
         try {
-            analyzerForm.getVariableComplexity(controller.getStrArr(),filepath);
+            analyzerForm.getVariableComplexity(controller.getStrArr(), filepath);
         } catch (IOException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         try {
             //Calculating Method Complexity
             analyzerForm.getMethodComplexity(filepath);
         } catch (IOException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
+
         //Calculating Inheritance Complexity
         InheritanceArray = controller.getStrArr();
-        try
-        {
-            analyzerForm.SetInheritance(controller.InheritanceAnalyzer(InheritanceArray),filepath);
-        }
-        catch(IOException ex)
-        {
+        InheritanceMeasure inheritanceMeasure = new InheritanceMeasure();
+        try {
+            analyzerForm.SetInheritance(inheritanceMeasure.InheritanceAnalyzer(InheritanceArray), filepath);
+        } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, ex);
         }
-        
+
         //Coupling complexity
         String filename = file.getName();
         System.out.println(filename);
         csFile1 = new CustomFile(filename);
         csFile1.setFilePath(filepath);
-        
+
         csFile2 = new CustomFile("Coupling.java");
 
         fileList.add(csFile1);
-        
-        
+
         couplMain.setFileList(fileList);
         couplMain.setFileType("java");
         couplMain.Start();
-        
+
         resultsCp = couplMain.getCouplingResults();
-        
-        try
-        {
-            analyzerForm.setCouplingResult(resultsCp,filepath);
-        }
-        catch(IOException ex)
-        {
+
+        try {
+            analyzerForm.setCouplingResult(resultsCp, filepath);
+        } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, ex);
         }
     }//GEN-LAST:event_measureBtnActionPerformed

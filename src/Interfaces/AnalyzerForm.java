@@ -11,13 +11,13 @@ import Analytics.MethodMeasure;
 import Analytics.SizeMeasure;
 import Analytics.VariableMeasure;
 import Model.ControlStructureModel;
+import Model.InheritanceModel;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
-
 
 public class AnalyzerForm extends javax.swing.JFrame {
 
@@ -26,50 +26,48 @@ public class AnalyzerForm extends javax.swing.JFrame {
     VariableMeasure vcm = new VariableMeasure();
     InheritanceMeasure icm = new InheritanceMeasure();
     ControlStructureMeasure Ccm = new ControlStructureMeasure();
-    
+
     ArrayList<String> SizeMeasureList = new ArrayList<>();
     ArrayList<String> MethodMeasureList = new ArrayList<>();
     ArrayList<String> VariableMeasureList = new ArrayList<>();
-    ArrayList<String> InheritanceMeasureList = new ArrayList<>();
+    ArrayList<InheritanceModel> InheritanceMeasureList = new ArrayList<>();
     ArrayList<ControlStructureModel> ControlStructureMeasureList = new ArrayList<>();
-    
-    int Cs,Wkw,Nkw,Wid,Nid,Wop,Nop,Wnv,Nnv,Wsl,Nsl;
-    int Cm,Wmrt,Wpdtp,Npdtp,Wcdtp,Ncdtp;
-    int Cv,Wvs,Wpdtv,Npdtv,Wcdtv,Ncdtv;
-    int Ccs,Wtcs,NC,Ccspps;
+
+    int Cs, Wkw, Nkw, Wid, Nid, Wop, Nop, Wnv, Nnv, Wsl, Nsl;
+    int Cm, Wmrt, Wpdtp, Npdtp, Wcdtp, Ncdtp;
+    int Cv, Wvs, Wpdtv, Npdtv, Wcdtv, Ncdtv;
+    int Ccs, Wtcs, NC, Ccspps;
     int Ci = 0;
-    int Ccp,Wr,Nr,Wmcms,Nmcms,Wmcmd,Nmcmd,Wmcrms,Nmcrms,Wmcrmd,Nmcrmd,Wrmcrms,Nrmcrms,Wrmcrmd,Nrmcrmd,Wrmcms,
-            Nrmcms,Wrmcmd,Nrmcmd,Wmrgvs,Nmrgvs,Wmrgvd,Nmrgvd,Wrmrgvs,Nrmrgvs,Wrmrgvd,Nrmrgvd;
+    int Ccp, Wr, Nr, Wmcms, Nmcms, Wmcmd, Nmcmd, Wmcrms, Nmcrms, Wmcrmd, Nmcrmd, Wrmcrms, Nrmcrms, Wrmcrmd, Nrmcrmd, Wrmcms,
+            Nrmcms, Wrmcmd, Nrmcmd, Wmrgvs, Nmrgvs, Wmrgvd, Nmrgvd, Wrmrgvs, Nrmrgvs, Wrmrgvd, Nrmrgvd;
     int Cc = 0;
     int Kwc = 0;
-   
-    int TCps=0;
+
+    int TCps = 0;
+
     public AnalyzerForm() {
         initComponents();
-         setSize(1200,700);
+        setSize(1200, 700);
     }
 
-     public void getDetails(int value)
-    {
+    public void getDetails(int value) {
         Cc = value;
         TCps = TCps + Cc;
         TotalComplexityLable.setText(Integer.toString(value));
     }
-    
-    public void getCodeText(String filepath) throws IOException
-    {
+
+    public void getCodeText(String filepath) throws IOException {
         FileReader fileReader = new FileReader(filepath);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         sizeTextView.read(bufferedReader, null);
         sizeTextView.requestFocus();
     }
-    
+
 //     Send calculated size values to the design    
-    public void getSizeComplexity(String filepath) throws Exception
-    {
+    public void getSizeComplexity(String filepath) throws Exception {
         //SizeLabel.setText(Integer.toString(scm.SizeComplexityInitializer(br)));
         SizeMeasureList = scm.SizeComplexityInitializer(filepath);
-        
+
         Wkw = Integer.parseInt(SizeMeasureList.get(0));
         Nkw = Integer.parseInt(SizeMeasureList.get(1));
         Wid = Integer.parseInt(SizeMeasureList.get(2));
@@ -80,7 +78,7 @@ public class AnalyzerForm extends javax.swing.JFrame {
         Nnv = Integer.parseInt(SizeMeasureList.get(7));
         Wsl = Integer.parseInt(SizeMeasureList.get(8));
         Nsl = Integer.parseInt(SizeMeasureList.get(9));
-        
+
         wkw.setText(Integer.toString(Wkw));
         nkw.setText(Integer.toString(Nkw));
         wid.setText(Integer.toString(Wid));
@@ -91,75 +89,70 @@ public class AnalyzerForm extends javax.swing.JFrame {
         nnv.setText(Integer.toString(Nnv));
         wsl.setText(Integer.toString(Wsl));
         nsl.setText(Integer.toString(Nsl));
-        
-        Cs=(Wkw*Nkw)+(Wid*Nid)+(Wop*Nop)+(Wnv*Nnv)+(Wsl*Nsl);
+
+        Cs = (Wkw * Nkw) + (Wid * Nid) + (Wop * Nop) + (Wnv * Nnv) + (Wsl * Nsl);
         cs.setText(Integer.toString(Cs));
         TCps = TCps + Cs;
     }
-    
-   
+
 //     Send calculated variable values to the design    
-     public void getVariableComplexity(String [] str, String filepath) throws FileNotFoundException, IOException
-    {
+    public void getVariableComplexity(String[] str, String filepath) throws FileNotFoundException, IOException {
         FileReader fileReader = new FileReader(filepath);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         variableTextView.read(bufferedReader, null);
         variableTextView.requestFocus();
-        
+
         VariableMeasureList = vcm.VariableComplexityInitializer(str);
-        
+
         Wvs = Integer.parseInt(VariableMeasureList.get(0));
         Wpdtv = Integer.parseInt(VariableMeasureList.get(1));
         Npdtv = Integer.parseInt(VariableMeasureList.get(2));
         Wcdtv = Integer.parseInt(VariableMeasureList.get(3));
         Ncdtv = Integer.parseInt(VariableMeasureList.get(4));
-        
+
         wvs.setText(Integer.toString(Wvs));
         wpdtv.setText(Integer.toString(Wpdtv));
         npdtv.setText(Integer.toString(Npdtv));
         wcdtv.setText(Integer.toString(Wcdtv));
         ncdtv.setText(Integer.toString(Ncdtv));
-        
+
         Cv = Wvs * ((Wpdtv * Npdtv) + (Wcdtv * Ncdtv));
         cv.setText(Integer.toString(Cv));
         TCps = TCps + Cv;
     }
-  
+
 //     Send calculated method values to the design
-    public void getMethodComplexity(String filepath) throws FileNotFoundException, IOException
-    {
+    public void getMethodComplexity(String filepath) throws FileNotFoundException, IOException {
         MethodMeasureList = mcm.MethodComplexityInitializer(filepath);
-        
+
         FileReader read = new FileReader(filepath);
         BufferedReader br = new BufferedReader(read);
         methodTextView.read(br, null);
         methodTextView.requestFocus();
-        
+
         Wmrt = Integer.parseInt(MethodMeasureList.get(0));
         Wpdtp = Integer.parseInt(MethodMeasureList.get(1));
         Npdtp = Integer.parseInt(MethodMeasureList.get(2));
         Wcdtp = Integer.parseInt(MethodMeasureList.get(3));
         Ncdtp = Integer.parseInt(MethodMeasureList.get(4));
-        
+
         wmrt.setText(Integer.toString(Wmrt));
         wpdtp.setText(Integer.toString(Wpdtp));
         npdtp.setText(Integer.toString(Npdtp));
         wcdtp.setText(Integer.toString(Wcdtp));
         ncdtp.setText(Integer.toString(Ncdtp));
-        
+
         Cm = Wmrt + (Wpdtp * Npdtp) + (Wcdtp * Ncdtp);
         cm.setText(Integer.toString(Cm));
         TCps = TCps + Cm;
 
-        
     }
-    
+
 //     Send calculated control structure values to the design
-    public void getControlStructureConplexity(String filepath) throws FileNotFoundException, IOException
-    {
-        
+    public void getControlStructureConplexity(String filepath) throws FileNotFoundException, IOException {
+
         ControlStructureMeasureList = Ccm.ControlComplexityInitializer(filepath);
-        
+
         for (int i = 0; i < ControlStructureMeasureList.size(); i++) {
             ControlStructureModel csm11 = new ControlStructureModel();
             csm11 = ControlStructureMeasureList.get(i);
@@ -169,120 +162,139 @@ public class AnalyzerForm extends javax.swing.JFrame {
             System.out.println("getWtcsAnswer:-- " + csm11.getWtcs());
             System.out.println("getNCAnswer:-- " + csm11.getNC());
             System.out.println("getCcsppsAnswer:-- " + csm11.getCcspps());
-            
+
             this.Wtcs = this.Wtcs + Integer.parseInt(csm11.getWtcs());
-            this.NC = this.NC +  Integer.parseInt(csm11.getNC());
+            this.NC = this.NC + Integer.parseInt(csm11.getNC());
             this.Ccspps = this.Ccspps + Integer.parseInt(csm11.getCcspps());
-            
+
             addControlStable(csm11.getLine(), csm11.getWtcs(), csm11.getNC(), csm11.getCcspps(), csm11.getCcs());
         }
-        
+
         wtcs.setText(Integer.toString(Wtcs));
         nc.setText(Integer.toString(NC));
         ccspps.setText(Integer.toString(Ccspps));
-        
+
         Ccs = (Wtcs * NC) + Ccspps;
         ccs.setText(Integer.toString(Ccs));
         TCps = TCps + Ccs;
     }
-    
+
 //    Control Structure Table
-        public void addControlStable(String data1, String data2, String data3, String data4, String data5) {
+    public void addControlStable(String data1, String data2, String data3, String data4, String data5) {
         DefaultTableModel model = (DefaultTableModel) ControlSTable.getModel();
 
         model.addRow(new Object[]{data1, data2, data3, data4, data5});
         ControlSTable.setModel(model);
     }
-    
+
 //     Send calculated inheritance values to the design
-     public void SetInheritance(int value , String filepath) throws FileNotFoundException, IOException
-   {
-       FileReader read = new FileReader(filepath);
-        BufferedReader br = new BufferedReader(read);
-        inheritanceTextArea.read(br, null);
-        inheritanceTextArea.requestFocus();
-        
-       Ci = value;
-       directIn.setText(Integer.toString(value));
-       indirectIn.setText(Integer.toString(Ci));
-       
-       totalIn.setText((Integer.toString(Ci)));
-       ci.setText(Integer.toString(Ci));
-       TCps = TCps + Ci;
-   }
-     
+    public void SetInheritance(ArrayList<InheritanceModel> value, String filepath) throws FileNotFoundException, IOException {
+
+        int Ci1 = 0;
+
+        InheritanceMeasureList = value;
+
+        for (int i = 0; i < InheritanceMeasureList.size(); i++) {
+            InheritanceModel inheritanceModel = new InheritanceModel();
+            inheritanceModel = InheritanceMeasureList.get(i);
+
+            System.out.println(" =====***======== ==========***====== ");
+            System.out.println("getLineAnswer:-- " + inheritanceModel.getLine());
+            System.out.println("getCiAnswer:-- " + inheritanceModel.getci());
+
+            Ci1 = Ci1 + inheritanceModel.getci();
+
+            addInheritanceTable(inheritanceModel.getLine(), inheritanceModel.getci());
+        }
+
+        Ci = Ci1;
+        directIn.setText(Integer.toString(Ci1));
+        indirectIn.setText(Integer.toString(Ci));
+
+        totalIn.setText((Integer.toString(Ci)));
+        ci.setText(Integer.toString(Ci));
+        TCps = TCps + Ci;
+    }
+
+//   Inheritance Table Genarate
+    public void addInheritanceTable(String data1, int data2) {
+        DefaultTableModel model = (DefaultTableModel) InheritanceTable.getModel();
+
+        model.addRow(new Object[]{data1, data2});
+        InheritanceTable.setModel(model);
+    }
+
 //     Send calculated coupling values to the design
-     public void setCouplingResult(ArrayList<String> rst, String filepath) throws FileNotFoundException, IOException
-     {
-         FileReader fileReader = new FileReader(filepath);
+    public void setCouplingResult(ArrayList<String> rst, String filepath) throws FileNotFoundException, IOException {
+        FileReader fileReader = new FileReader(filepath);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         couplingtextarea.read(bufferedReader, null);
         couplingtextarea.requestFocus();
-        
-         Wr = Integer.parseInt(rst.get(0));
-            Nr = Integer.parseInt(rst.get(1));
-            Wmcms = Integer.parseInt(rst.get(2));
-            Nmcms = Integer.parseInt(rst.get(3));
-            Wmcmd = Integer.parseInt(rst.get(4));
-            Nmcmd = Integer.parseInt(rst.get(5));
-            Wmcrms = Integer.parseInt(rst.get(6));
-            Nmcrms = Integer.parseInt(rst.get(7));
-            Wmcrmd = Integer.parseInt(rst.get(8));
-            Nmcrmd = Integer.parseInt(rst.get(9));
-            Wrmcrms = Integer.parseInt(rst.get(10));
-            Nrmcrms = Integer.parseInt(rst.get(11));
-            Wrmcrmd = Integer.parseInt(rst.get(12));
-            Nrmcrmd = Integer.parseInt(rst.get(13));
-            Wrmcms = Integer.parseInt(rst.get(14));
-            Nrmcms = Integer.parseInt(rst.get(15));
-            Wrmcmd = Integer.parseInt(rst.get(16));
-            Nrmcmd = Integer.parseInt(rst.get(17));
-            Wmrgvs = Integer.parseInt(rst.get(18));
-            Nmrgvs = Integer.parseInt(rst.get(19));
-            Wmrgvd = Integer.parseInt(rst.get(20));
-            Nmrgvd = Integer.parseInt(rst.get(21));
-            Wrmrgvs = Integer.parseInt(rst.get(22));
-            Nrmrgvs = Integer.parseInt(rst.get(23));
-            Wrmrgvd = Integer.parseInt(rst.get(24));
-            Nrmrgvd = Integer.parseInt(rst.get(25));
-            
-            wr.setText(Integer.toString(Wr));
-            nr.setText(Integer.toString(Nr));
-            wmcms.setText(Integer.toString(Wmcms));
-            nmcms.setText(Integer.toString(Nmcms));
-            wmcmd.setText(Integer.toString(Wmcmd));
-            nmcmd.setText(Integer.toString(Nmcmd));
-            wmcrms.setText(Integer.toString(Wmcrms));
-            nmcrms.setText(Integer.toString(Nmcrms));
-            wmcrmd.setText(Integer.toString(Wmcrmd));
-            nmcrmd.setText(Integer.toString(Nmcrmd));
-            wrmcrms.setText(Integer.toString(Wrmcrms));
-            nrmcrms.setText(Integer.toString(Nrmcrms));
-            wrmcrmd.setText(Integer.toString(Wrmcrmd));
-            nrmcrmd.setText(Integer.toString(Nrmcrmd));
-            wrmcms.setText(Integer.toString(Wrmcms));
-            nrmcms.setText(Integer.toString(Nrmcms));
-            wrmcmd.setText(Integer.toString(Wrmcmd));
-            nrmcmd.setText(Integer.toString(Nrmcmd));
-            wmrgvs.setText(Integer.toString(Wmrgvs));
-            nmrgvs.setText(Integer.toString(Nmrgvs));
-            wmrgvd.setText(Integer.toString(Wmrgvd));
-            nmrgvd.setText(Integer.toString(Nmrgvd));
-            wrmrgvs.setText(Integer.toString(Wrmrgvs));
-            nrmrgvs.setText(Integer.toString(Nrmrgvs));
-            wrmrgvd.setText(Integer.toString(Wrmrgvd));
-            nrmrgvd.setText(Integer.toString(Nrmrgvd));
-            
-            Ccp = (Wr * Nr) + (Wmcms * Nmcms) + (Wmcmd * Nmcmd) + (Wmcrms * Nmcrms) + (Wmcrmd * Nmcrmd) + 
-                    (Wrmcrms * Nrmcrms) + (Wrmcrmd *Nrmcrmd) + (Wrmcms * Nrmcms) + (Wrmcmd * Nrmcmd) +  
-                    (Wmrgvs *Nmrgvs) + (Wmrgvd * Nmrgvd) + (Wrmrgvs * Nrmrgvs) + (Wrmrgvd * Nrmrgvd);
-            
-            ccp.setText(Integer.toString(Ccp));
-            TCps = TCps + Ccp;
 
-     }
-    public long getFinalResult()
-    {
+        Wr = Integer.parseInt(rst.get(0));
+        Nr = Integer.parseInt(rst.get(1));
+        Wmcms = Integer.parseInt(rst.get(2));
+        Nmcms = Integer.parseInt(rst.get(3));
+        Wmcmd = Integer.parseInt(rst.get(4));
+        Nmcmd = Integer.parseInt(rst.get(5));
+        Wmcrms = Integer.parseInt(rst.get(6));
+        Nmcrms = Integer.parseInt(rst.get(7));
+        Wmcrmd = Integer.parseInt(rst.get(8));
+        Nmcrmd = Integer.parseInt(rst.get(9));
+        Wrmcrms = Integer.parseInt(rst.get(10));
+        Nrmcrms = Integer.parseInt(rst.get(11));
+        Wrmcrmd = Integer.parseInt(rst.get(12));
+        Nrmcrmd = Integer.parseInt(rst.get(13));
+        Wrmcms = Integer.parseInt(rst.get(14));
+        Nrmcms = Integer.parseInt(rst.get(15));
+        Wrmcmd = Integer.parseInt(rst.get(16));
+        Nrmcmd = Integer.parseInt(rst.get(17));
+        Wmrgvs = Integer.parseInt(rst.get(18));
+        Nmrgvs = Integer.parseInt(rst.get(19));
+        Wmrgvd = Integer.parseInt(rst.get(20));
+        Nmrgvd = Integer.parseInt(rst.get(21));
+        Wrmrgvs = Integer.parseInt(rst.get(22));
+        Nrmrgvs = Integer.parseInt(rst.get(23));
+        Wrmrgvd = Integer.parseInt(rst.get(24));
+        Nrmrgvd = Integer.parseInt(rst.get(25));
+
+        wr.setText(Integer.toString(Wr));
+        nr.setText(Integer.toString(Nr));
+        wmcms.setText(Integer.toString(Wmcms));
+        nmcms.setText(Integer.toString(Nmcms));
+        wmcmd.setText(Integer.toString(Wmcmd));
+        nmcmd.setText(Integer.toString(Nmcmd));
+        wmcrms.setText(Integer.toString(Wmcrms));
+        nmcrms.setText(Integer.toString(Nmcrms));
+        wmcrmd.setText(Integer.toString(Wmcrmd));
+        nmcrmd.setText(Integer.toString(Nmcrmd));
+        wrmcrms.setText(Integer.toString(Wrmcrms));
+        nrmcrms.setText(Integer.toString(Nrmcrms));
+        wrmcrmd.setText(Integer.toString(Wrmcrmd));
+        nrmcrmd.setText(Integer.toString(Nrmcrmd));
+        wrmcms.setText(Integer.toString(Wrmcms));
+        nrmcms.setText(Integer.toString(Nrmcms));
+        wrmcmd.setText(Integer.toString(Wrmcmd));
+        nrmcmd.setText(Integer.toString(Nrmcmd));
+        wmrgvs.setText(Integer.toString(Wmrgvs));
+        nmrgvs.setText(Integer.toString(Nmrgvs));
+        wmrgvd.setText(Integer.toString(Wmrgvd));
+        nmrgvd.setText(Integer.toString(Nmrgvd));
+        wrmrgvs.setText(Integer.toString(Wrmrgvs));
+        nrmrgvs.setText(Integer.toString(Nrmrgvs));
+        wrmrgvd.setText(Integer.toString(Wrmrgvd));
+        nrmrgvd.setText(Integer.toString(Nrmrgvd));
+
+        Ccp = (Wr * Nr) + (Wmcms * Nmcms) + (Wmcmd * Nmcmd) + (Wmcrms * Nmcrms) + (Wmcrmd * Nmcrmd)
+                + (Wrmcrms * Nrmcrms) + (Wrmcrmd * Nrmcrmd) + (Wrmcms * Nrmcms) + (Wrmcmd * Nrmcmd)
+                + (Wmrgvs * Nmrgvs) + (Wmrgvd * Nmrgvd) + (Wrmrgvs * Nrmrgvs) + (Wrmrgvd * Nrmrgvd);
+
+        ccp.setText(Integer.toString(Ccp));
+        TCps = TCps + Ccp;
+
+    }
+
+    public long getFinalResult() {
         System.out.println(Cs);
         System.out.println(Cv);
         System.out.println(Cm);
@@ -293,7 +305,7 @@ public class AnalyzerForm extends javax.swing.JFrame {
         System.out.println(TCps);
         return TCps;
     }
-   
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -360,8 +372,6 @@ public class AnalyzerForm extends javax.swing.JFrame {
         jLabel30 = new javax.swing.JLabel();
         ncdtp = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        inheritanceTextArea = new javax.swing.JTextArea();
         jPanel10 = new javax.swing.JPanel();
         jLabel36 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
@@ -373,6 +383,8 @@ public class AnalyzerForm extends javax.swing.JFrame {
         jLabel58 = new javax.swing.JLabel();
         jLabel59 = new javax.swing.JLabel();
         totalIn = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        InheritanceTable = new javax.swing.JTable();
         jPanel12 = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -926,13 +938,6 @@ public class AnalyzerForm extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(51, 51, 51));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        inheritanceTextArea.setEditable(false);
-        inheritanceTextArea.setColumns(20);
-        inheritanceTextArea.setRows(5);
-        jScrollPane8.setViewportView(inheritanceTextArea);
-
-        jPanel5.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 14, 470, 413));
-
         jPanel10.setBackground(new java.awt.Color(51, 51, 51));
 
         jLabel36.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
@@ -1031,6 +1036,18 @@ public class AnalyzerForm extends javax.swing.JFrame {
         );
 
         jPanel5.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 299, 413));
+
+        InheritanceTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Line", "Ci"
+            }
+        ));
+        jScrollPane4.setViewportView(InheritanceTable);
+
+        jPanel5.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         jTabbedPane1.addTab("Inheritance", jPanel5);
 
@@ -1686,14 +1703,13 @@ public class AnalyzerForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void TCpsmeasureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TCpsmeasureActionPerformed
-        
+
         TotalComplexity ttcmpl = new TotalComplexity();
         ttcmpl.SetValues(Cc, Wkw, Cs, Cm, Cv, Ci, Ccs, Ccp, TCps);
         ttcmpl.setLocationRelativeTo(null);
         ttcmpl.setVisible(true);
     }//GEN-LAST:event_TCpsmeasureActionPerformed
 
-   
     /**
      * @param args the command line arguments
      */
@@ -1731,6 +1747,7 @@ public class AnalyzerForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable ControlSTable;
+    private javax.swing.JTable InheritanceTable;
     private javax.swing.JButton TCpsmeasure;
     private javax.swing.JLabel TotalComplexityLable;
     private javax.swing.JLabel ccp;
@@ -1743,7 +1760,6 @@ public class AnalyzerForm extends javax.swing.JFrame {
     private javax.swing.JLabel cv;
     private javax.swing.JLabel directIn;
     private javax.swing.JLabel indirectIn;
-    private javax.swing.JTextArea inheritanceTextArea;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1823,9 +1839,9 @@ public class AnalyzerForm extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea methodTextView;
     private javax.swing.JLabel nc;

@@ -1,4 +1,3 @@
-
 package Analytics;
 
 import Model.ControlStructureModel;
@@ -9,9 +8,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
-
 public class ControlStructureMeasure {
-    
+
     ArrayList<ControlStructureModel> returnValues = new ArrayList<>();
     Controller ctrl = new Controller();
 
@@ -19,6 +17,7 @@ public class ControlStructureMeasure {
     int Wtcs, NC, Ccspps;
     int Wtcs1, NC1, Ccspps1;
     int Ccs, Ccs1;
+    int CcsppsCase;
     String[] controlStructs = ctrl.getControlStucts();
 
     public ControlStructureMeasure() {
@@ -60,17 +59,17 @@ public class ControlStructureMeasure {
 //        returnValues.add(Integer.toString(NC));
 //        returnValues.add(Integer.toString(Ccspps));
         this.Ccs1 = this.Wtcs1 * this.NC1 + this.Ccspps1;
-        System.out.println("Answer:-- " + Wtcs1 + " " + NC1 + " " + Ccspps1 + " " + Ccs1);
-
-        for (int i = 0; i < returnValues.size(); i++) {
-            ControlStructureModel csm11 = new ControlStructureModel();
-            csm11 = returnValues.get(i);
-
-            System.out.println("RRRRRRRrAnswer:-- " + csm11.getLine());
-            System.out.println("RRRRRRRrAnswer:-- " + csm11.getWtcs());
-            System.out.println("RRRRRRRrAnswer:-- " + csm11.getNC());
-            System.out.println("RRRRRRRrAnswer:-- " + csm11.getCcspps());
-        }
+//        System.out.println("Answer:-- " + Wtcs1 + " " + NC1 + " " + Ccspps1 + " " + Ccs1);
+//
+//        for (int i = 0; i < returnValues.size(); i++) {
+//            ControlStructureModel csm11 = new ControlStructureModel();
+//            csm11 = returnValues.get(i);
+//
+//            System.out.println("RRRRRRRrAnswer:-- " + csm11.getLine());
+//            System.out.println("RRRRRRRrAnswer:-- " + csm11.getWtcs());
+//            System.out.println("RRRRRRRrAnswer:-- " + csm11.getNC());
+//            System.out.println("RRRRRRRrAnswer:-- " + csm11.getCcspps());
+//        }
 
         return returnValues;
     }
@@ -113,15 +112,16 @@ public class ControlStructureMeasure {
                         Wtcs = Wtcs + 2;
                         NC++;
                     } else if (word.equals(("case"))) {
-//                        if(Wtcs!=0)
-//                        {
-//                            Ccspps = this.Ccs;
-//                        }
+                        if (Ccspps == 0) {
+                            Ccspps = this.CcsppsCase;
+                        }
                         Wtcs = Wtcs + 1;
                         NC++;
                     }
                     if (Ccs != 0) {
                         Ccspps = this.Ccs;
+                        this.CcsppsCase = Ccspps;
+
                     }
                 }
             }
