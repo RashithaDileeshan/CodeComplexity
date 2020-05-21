@@ -14,7 +14,6 @@ public interface CouplingService {
 	public void getMethodSet(CustomFile file);
 	public void getCalledMethodSet(CustomFile file);
 	public void getCalledMethodSet_DF(CustomFile ifile, ArrayList<CustomFile> fileList);
-	/*public void getMethodListFull(CustomFile file);*/
 	public void getGlobalVariableSet(CustomFile file);
 	public void getGlobalVariableListInReg(CustomFile file);
 	public void getGlobalVariableListInRec(CustomFile file);

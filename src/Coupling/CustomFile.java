@@ -4,68 +4,67 @@ import Coupling.Coupling;
 import Coupling.Line;
 import java.util.ArrayList;
 
-
 public class CustomFile {
-	
-	private String fileName;
-	private String filePath;
-	private String fileType;
-	private int lastIndex;
-	private ArrayList<Line> lineSet;
-	private Coupling coupling;
-	
-	public CustomFile(String fileName) {
-		this.fileName = fileName;
-		this.lineSet = null;
-		this.coupling = new Coupling(fileName);
-	}
 
-	public String getFileName() {
-		return fileName;
-	}
-	
-	public String getFilePath() {
-		return filePath;
-	}
+    private String fileName;
+    private String filePath;
+    private String fileType;
+    private int lastIndex;
+    private ArrayList<Line> lineSet;
+    private Coupling coupling;
 
-	public void setFilePath(String filePath) {
-		this.filePath = filePath;
-	}
+    public CustomFile(String fileName) {
+        this.fileName = fileName;
+        this.lineSet = null;
+        this.coupling = new Coupling(fileName);
+    }
 
-	public String getFileType() {
-		return fileType;
-	}
+    public String getFileName() {
+        return fileName;
+    }
 
-	public void setFileType(String fileType) {
-		this.fileType = fileType;
-	}
+    public String getFilePath() {
+        return filePath;
+    }
 
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
-	}
-	
-	public int getLastIndex() {
-		return lastIndex;
-	}
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
+    }
 
-	public void setLastIndex(int lastIndex) {
-		this.lastIndex = lastIndex;
-	}
+    public String getFileType() {
+        return fileType;
+    }
 
-	public void setLineSet(ArrayList<Line> lineSet) {
-		this.lineSet = new ArrayList<Line>(lineSet);
-	}
-	
-	public ArrayList<Line> getLineSet(){
-		return lineSet;
-	}
+    public void setFileType(String fileType) {
+        this.fileType = fileType;
+    }
 
-	public Coupling getCoupling() {
-		return coupling;
-	}
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
 
-	public void setCoupling(Coupling coupling) {
-		this.coupling = coupling;
-	}
+    public int getLastIndex() {
+        return lastIndex;
+    }
+
+    public void setLastIndex(int lastIndex) {
+        this.lastIndex = lastIndex;
+    }
+
+    public void setLineSet(ArrayList<Line> lineSet) {
+        this.lineSet = new ArrayList<Line>(lineSet);
+    }
+
+    public ArrayList<Line> getLineSet() {
+        return lineSet;
+    }
+
+    public Coupling getCoupling() {
+        return coupling;
+    }
+
+    public void setCoupling(Coupling coupling) {
+        this.coupling = coupling;
+    }
 
 }

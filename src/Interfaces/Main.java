@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Interfaces;
 
 import Analytics.Controller;
@@ -10,6 +5,8 @@ import Analytics.FileAnalyzer;
 import Analytics.InheritanceMeasure;
 import Coupling.CouplingMain;
 import Coupling.CustomFile;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -39,7 +36,8 @@ public class Main extends javax.swing.JFrame {
 
     public Main() {
         initComponents();
-        setSize(1500, 900);
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        setSize(screenSize.width, (screenSize.height - 30));
     }
 
     @SuppressWarnings("unchecked")
@@ -139,7 +137,7 @@ public class Main extends javax.swing.JFrame {
                 measureBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(measureBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 570, 128, 45));
+        jPanel1.add(measureBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 540, 128, 45));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

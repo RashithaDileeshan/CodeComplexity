@@ -2,99 +2,98 @@ package Coupling;
 
 import Coupling.CustomFile;
 
-
 public class Line {
-	
-	private CustomFile file;
-	private String fileName;
-	private int lineNumber;
-	private String lineContent;
-	private int endLineNumber;
-	private String objName;
-	private int[] colValues;
-	private int[] sum;
-	private int finalValue;
-	
-	public Line(int lineNumber, String lineContent) {
-		this.lineNumber = lineNumber;
-		this.lineContent = lineContent;
-		this.colValues = new int[13];
-		this.sum = new int[13];
-	}
-	
-	public String getFileName() {
-		return fileName;
-	}
-	
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
-	}
 
-	public CustomFile getFile() {
-		return file;
-	}
+    private CustomFile file;
+    private String fileName;
+    private int lineNumber;
+    private String lineContent;
+    private int endLineNumber;
+    private String objName;
+    private int[] colValues;
+    private int[] sum;
+    private int finalValue;
 
-	public void setFile(CustomFile file) {
-		this.file = file;
-	}
+    public Line(int lineNumber, String lineContent) {
+        this.lineNumber = lineNumber;
+        this.lineContent = lineContent;
+        this.colValues = new int[13];
+        this.sum = new int[13];
+    }
 
-	public int getLineNumber() {
-		return lineNumber;
-	}
+    public String getFileName() {
+        return fileName;
+    }
 
-	public void setLineNumber(int lineNumber) {
-		this.lineNumber = lineNumber;
-	}
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
 
-	public String getLineContent() {
-		return lineContent;
-	}
+    public CustomFile getFile() {
+        return file;
+    }
 
-	public void setLineContent(String lineContent) {
-		this.lineContent = lineContent;
-	}
+    public void setFile(CustomFile file) {
+        this.file = file;
+    }
 
-	public int getEndLineNumber() {
-		return endLineNumber;
-	}
+    public int getLineNumber() {
+        return lineNumber;
+    }
 
-	public void setEndLineNumber(int endLineNumber) {
-		this.endLineNumber = endLineNumber;
-	}
+    public void setLineNumber(int lineNumber) {
+        this.lineNumber = lineNumber;
+    }
 
-	public String getObjName() {
-		return objName;
-	}
+    public String getLineContent() {
+        return lineContent;
+    }
 
-	public void setObjName(String objName) {
-		this.objName = objName;
-	}
+    public void setLineContent(String lineContent) {
+        this.lineContent = lineContent;
+    }
 
-	public int getFinalValue() {
-		return finalValue;
-	}
+    public int getEndLineNumber() {
+        return endLineNumber;
+    }
 
-	public void setFinalValue() {
-		int sum = 0;
-		for(int x : this.colValues) {
-			sum += x;
-		}
-		this.finalValue = sum;
-	}
+    public void setEndLineNumber(int endLineNumber) {
+        this.endLineNumber = endLineNumber;
+    }
 
-	public int[] getColValues() {
-		return colValues;
-	}
+    public String getObjName() {
+        return objName;
+    }
 
-	public void setColValues(int index, int value) {
-		this.colValues[index] = value;
-	}
+    public void setObjName(String objName) {
+        this.objName = objName;
+    }
 
-	public int[] getSum() {
-		return sum;
-	}
+    public int getFinalValue() {
+        return finalValue;
+    }
 
-	public void setSum(int index, int value) {
-		this.sum[index] = value;
-	}
+    public void setFinalValue() {
+        int sum = 0;
+        for (int x : this.colValues) {
+            sum += x;
+        }
+        this.finalValue = sum;
+    }
+
+    public int[] getColValues() {
+        return colValues;
+    }
+
+    public void setColValues(int index, int value) {
+        this.colValues[index] = value;
+    }
+
+    public int[] getSum() {
+        return sum;
+    }
+
+    public void setSum(int index, int value) {
+        this.sum[index] = value;
+    }
 }
