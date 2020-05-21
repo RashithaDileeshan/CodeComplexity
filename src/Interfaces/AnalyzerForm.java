@@ -7,6 +7,7 @@ import Analytics.SizeMeasure;
 import Analytics.VariableMeasure;
 import Model.ControlStructureModel;
 import Model.InheritanceModel;
+import Model.MethodModel;
 import Model.SizeModel;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -26,7 +27,7 @@ public class AnalyzerForm extends javax.swing.JFrame {
     ControlStructureMeasure Ccm = new ControlStructureMeasure();
 
     ArrayList<SizeModel> SizeMeasureList = new ArrayList<>();
-    ArrayList<String> MethodMeasureList = new ArrayList<>();
+    ArrayList<MethodModel> MethodMeasureList = new ArrayList<>();
     ArrayList<String> VariableMeasureList = new ArrayList<>();
     ArrayList<InheritanceModel> InheritanceMeasureList = new ArrayList<>();
     ArrayList<ControlStructureModel> ControlStructureMeasureList = new ArrayList<>();
@@ -142,27 +143,40 @@ public class AnalyzerForm extends javax.swing.JFrame {
 
     public void getMethodComplexity(String filepath) throws FileNotFoundException, IOException {
         MethodMeasureList = mcm.MethodComplexityInitializer(filepath);
+        for (int i = 0; i < MethodMeasureList.size(); i++) {
+            MethodModel methodModel = new MethodModel();
+            methodModel = MethodMeasureList.get(i);
 
-        FileReader read = new FileReader(filepath);
-        BufferedReader br = new BufferedReader(read);
-        methodTextView.read(br, null);
-        methodTextView.requestFocus();
+            this.Wmrt = this.Wmrt + methodModel.getWmrt();
+            this.Wpdtp = this.Wpdtp + methodModel.getWpdtp();
+            this.Npdtp = this.Npdtp + methodModel.getNpdtp();
+            this.Wcdtp = this.Wcdtp + methodModel.getWcdtp();
+            this.Ncdtp = this.Ncdtp + methodModel.getNcdtp();
 
-        Wmrt = Integer.parseInt(MethodMeasureList.get(0));
-        Wpdtp = Integer.parseInt(MethodMeasureList.get(1));
-        Npdtp = Integer.parseInt(MethodMeasureList.get(2));
-        Wcdtp = Integer.parseInt(MethodMeasureList.get(3));
-        Ncdtp = Integer.parseInt(MethodMeasureList.get(4));
-
+            addMethodTable(methodModel.getLine(),
+                    methodModel.getWmrt(),
+                    methodModel.getWpdtp(),
+                    methodModel.getNpdtp(),
+                    methodModel.getWcdtp(),
+                    methodModel.getNcdtp(),
+                    methodModel.getCm());
+        }
         wmrt.setText(Integer.toString(Wmrt));
         wpdtp.setText(Integer.toString(Wpdtp));
         npdtp.setText(Integer.toString(Npdtp));
-        wcdtp.setText(Integer.toString(Wcdtp));
+        wcdtp.setText(Integer.toString(Wcdtp*2));
         ncdtp.setText(Integer.toString(Ncdtp));
-
-        Cm = Wmrt + (Wpdtp * Npdtp) + (Wcdtp * Ncdtp);
+        
+        Cm = Wmrt + (Wpdtp * Npdtp) + ((Wcdtp*2) * Ncdtp);
         cm.setText(Integer.toString(Cm));
         TCps = TCps + Cm;
+    }
+
+    public void addMethodTable(String line, int Wmrt, int Wpdtp, int Npdtp, int Wcdtp, int Ncdtp, int Cm) {
+        DefaultTableModel model = (DefaultTableModel) methodTable.getModel();
+        model.addRow(new Object[]{line, Wmrt, Npdtp, Ncdtp, Cm});
+        methodTable.setModel(model);
+
     }
 
     public void getControlStructureConplexity(String filepath) throws FileNotFoundException, IOException {
@@ -349,8 +363,6 @@ public class AnalyzerForm extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         cv = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        methodTextView = new javax.swing.JTextArea();
         jPanel9 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
@@ -364,6 +376,8 @@ public class AnalyzerForm extends javax.swing.JFrame {
         cm = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         ncdtp = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        methodTable = new javax.swing.JTable();
         jPanel5 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         jLabel36 = new javax.swing.JLabel();
@@ -823,13 +837,6 @@ public class AnalyzerForm extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(51, 51, 51));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        methodTextView.setEditable(false);
-        methodTextView.setColumns(20);
-        methodTextView.setRows(5);
-        jScrollPane7.setViewportView(methodTextView);
-
-        jPanel4.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 14, 510, 450));
-
         jPanel9.setBackground(new java.awt.Color(51, 51, 51));
 
         jLabel26.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
@@ -947,6 +954,27 @@ public class AnalyzerForm extends javax.swing.JFrame {
         );
 
         jPanel4.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 299, 413));
+
+        methodTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Statements", "Wmrt", "Npdtp", "Ncdtp", "Cm"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        methodTable.getTableHeader().setReorderingAllowed(false);
+        jScrollPane2.setViewportView(methodTable);
+
+        jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 510, 450));
 
         jTabbedPane1.addTab("Method", jPanel4);
 
@@ -1885,13 +1913,13 @@ public class AnalyzerForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextArea methodTextView;
+    private javax.swing.JTable methodTable;
     private javax.swing.JLabel nc;
     private javax.swing.JLabel ncdtp;
     private javax.swing.JLabel ncdtv;

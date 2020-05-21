@@ -108,36 +108,42 @@ public class SizeMeasure {
                 Wid++;
                 Nid++;
             }
+            //Arithmetic Operators
             for (String OperatorArray1 : ArithmeticOperatorArray) {
                 if (word.equals(OperatorArray1)) {
                     Wop++;
                     Nop++;
                 }
             }
+            //Relation Operators
             for (String OperatorArray2 : RelationOperatorArray) {
                 if (word.equals(OperatorArray2)) {
                     Wop++;
                     Nop++;
                 }
             }
+            //Logical Operators
             for (String OperatorArray3 : LogicalOperatorArray) {
                 if (word.equals(OperatorArray3)) {
                     Wop++;
                     Nop++;
                 }
             }
+            //Bitwise Operators
             for (String OperatorArray4 : BitwiseOperatorArray) {
                 if (word.equals(OperatorArray4)) {
                     Wop++;
                     Nop++;
                 }
             }
+            //Miscellaneous Operators
             for (String OperatorArray5 : MiscellaneousOperatorArray) {
                 if (word.equals(OperatorArray5)) {
                     Wop++;
                     Nop++;
                 }
             }
+            //Assignments Operators
             for (String OperatorArray6 : AssignmentsOperatorArray) {
                 if (word.equals(OperatorArray6)) {
                     Wop++;
